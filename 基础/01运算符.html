@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 赋值运算符
+        var a = 1;
+        var b = 2;
+        var c = a + b;
+        console.log(c); // 输出 3
+        // 逻辑运算符
+        var x = true;
+        var y = false;
+        var z = x && y;
+        console.log(z); // 输出 false
+        // 位运算符
+        var m = 5; // 二进制 0101
+        var n = 3; // 二进制 0011
+        var o = m & n; // 位与
+        console.log(o); // 输出 1 (二进制 0001)
+        // 关系运算符
+        var p = 10;
+        var q = 20;
+        var r = p < q;
+        console.log(r); // 输出 true
+        // 条件运算符
+        var s = (p > q) ? "p 大于 q" : "p 小于或等于 q";
+        console.log(s); // 输出 "p 小于或等于 q"
+        // instanceof 运算符
+        var arr = [];
+        var isArray = arr instanceof Array;
+        console.log(isArray); // 输出 true
+        // typeof 运算符
+        var str = "Hello, World!";
+        var type = typeof str;
+        console.log(type); // 输出 "string"
+        // delete 运算符
+        var obj = { name: "Alice", age: 25 };
+        delete obj.age;
+        console.log(obj); // 输出 { name: "Alice" }
+        // void 运算符
+        function doNothing() {
+            return 42;
+        }
+        var result = void 0;
+        console.log(result); // 输出 undefined
+        // in 运算符
+        var person = { name: "Bob", age: 30 };
+        var hasName = "name" in person;
+        console.log(hasName); // 输出 true
+        // 逗号运算符
+        var a = (1, 2, 3);
+        console.log(a); // 输出 3
+        // 逻辑非运算符
+        var isTrue = true;
+        var isFalse = !isTrue;
+        console.log(isFalse); // 输出 false
+        // 逻辑或运算符
+        var isFalse = false;
+        var isTrue = isFalse || true;
+        console.log(isTrue); // 输出 true
+        // 逻辑与运算符
+        var isTrue = true;
+        var isFalse = isTrue && false;
+        console.log(isFalse); // 输出 false
+        // 赋值运算符
+        var x = 5;
+        x += 2; // 相当于 x = x + 2
+        console.log(x); // 输出 7
+        // 递增和递减运算符
+        var y = 10;
+        y++; // 相当于 y = y + 1
+        console.log(y); // 输出 11
+        y--; // 相当于 y = y - 1
+        console.log(y); // 输出 10
+
+        //用户输入
+        let num1 = prompt("请输入第一个数字：");
+        //弹出结果
+        alert(num1%4===0 && num1%100 !== 0 || num1%400 === 0 ? "是闰年" : "不是闰年");
+
+        //优先级
+        let a = 1;
+        let b = 2;
+        let c = 3;
+        let result = a + b * c; // 结果是 7，因为乘法优先级高于加法
+        console.log(result); // 输出 7
+        // 逻辑运算符的短路特性
+        var a = true;
+        var b = false;
+        var c = a || (b = true); // b 不会被赋值，因为 a 已经为 true
+        console.log(b); // 输出 false
+        // 赋值运算符的链式赋值
+        var a, b, c;
+        a = b = c = 10; // a, b, c 都被赋值为 10
+        console.log(a, b, c); // 输出 10 10 10
+    </script>
+    
+</body>
+</html>

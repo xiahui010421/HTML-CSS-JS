@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象</title>
+</head>
+<body>
+    <script>
+        //无序的数据类型
+        let obj={
+            name: '张三',
+            age: 18,
+        }
+        let obj2 = new Object({
+            name: '张三',
+            age: 18,
+        })
+        console.log(obj);
+        console.log(obj2);
+        //对象的属性
+        console.log(obj.name);
+        console.log(obj['name']);
+        //对象的属性可以是任意数据类型
+        let obj3 = {
+            name: '张三',
+            age: 18,
+            isStudent: true,
+            hobbies: ['reading', 'sports'],
+            address: {
+                city: 'Beijing',
+                street: 'Wangfujing'
+            },
+            greet: function() {
+                return 'Hello, my name is ' + this.name;
+            }
+        }
+        console.log(obj3);
+        console.log(obj3.greet());
+                
+    </script>
+</body>
+</html>

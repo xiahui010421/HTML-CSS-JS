@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+       /* 填写样式 */
+    </style>
+</head>
+
+<body>
+    <!-- 填写标签 -->
+    <script type="text/javascript">
+        // 填写JavaScript
+        function matchesPattern(str) {
+            if (str.length !== 12) return false;
+            for (let i = 0; i < str.length; i++) {
+                if (i === 3 || i === 7) {
+                    if (str[i] !== '-') return false;
+                } else {
+                    if (str[i] < '0' || str[i] > '9') return false;
+                }
+            }
+            return true;
+        }
+
+        // 测试用例
+        console.log(matchesPattern('800-555-1212')); // true
+
+    </script>
+</body>
+
+</html>

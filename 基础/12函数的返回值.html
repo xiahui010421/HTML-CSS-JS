@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12函数的返回值</title>
+</head>
+<body>
+    <script>
+        //求和函数的写法
+        function getTotalPrice(x, y){
+            //有返回值-- return之后的代码不执行,立即结束函数
+            return x + y;
+            //为什么要有返回值--函数不需要输出结果只需要做事情，扩展性更高
+        }
+        //存结果-调用
+        let sum = getTotalPrice(10, 20);
+        console.log(sum);
+    </script>
+</body>
+</html>

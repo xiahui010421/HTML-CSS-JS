@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        const ul = document.querySelector('ul');
+        // const li1= ul.children[0].cloneNode(true); // 克隆第一个子元素
+        // li1.textContent = '克隆的元素'; // 修改克隆元素的文本内容
+        // ul.appendChild(li1); // 将克隆的元素添加到列表末尾
+
+        ul.appendChild(ul.children[0].cloneNode(true)); // 克隆第一个子元素并添加到列表末尾
+
+        ul.removeChild(ul.children[0])
+    </script>
+</body>
+</html>

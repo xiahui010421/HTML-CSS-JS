@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02-DOM树和对象</title>
+</head>
+<body>
+    <div>123</div>
+
+    <script>
+        //通过Js的方式去操作html和浏览器
+        //Dom和Bom
+        //DOM（Document Object Model）是文档对象模型的缩写，是一种用于表示和操作HTML和XML文档的编程接口。它将文档视为一个树形结构，其中每个节点都是文档的一部分。
+        //DOM树是DOM的可视化表示，显示了文档的层次结构和节点之间的关系。每个节点都可以通过JavaScript进行访问和操作。
+        //DOM对象是DOM树的具体实现，它提供了一组方法和属性，用于访问和操作文档中的元素、属性和文本内容。
+        
+        
+        //BOM（Browser Object Model）是浏览器对象模型的缩写，是一种用于表示和操作浏览器窗口和浏览器功能的编程接口。它提供了一组对象和方法，用于访问和操作浏览器的窗口、历史记录、位置、导航等功能。
+        //BOM对象是BOM的具体实现，它提供了一组方法和属性，用于访问和操作浏览器的功能。
+        //BOM树是BOM的可视化表示，显示了浏览器窗口的层次结构和对象之间的关系。每个对象都可以通过JavaScript进行访问和操作。
+        //BOM树的根节点是window对象，表示整个浏览器窗口。根节点下面是各种类型的对象，包括document对象、location对象、history对象等。
+    const div = document.querySelector('div');
+    // div.innerHTML = 'Hello, World!'; // 修改div的内容
+    div.style.color = 'red'; // 修改div的样式
+    div.style.fontSize = '20px'; // 修改div的字体大小
+    div.style.backgroundColor = 'yellow'; // 修改div的背景颜色
+    div.style.border = '1px solid black'; // 修改div的边框
+    div.style.padding = '10px'; // 修改div的内边距
+    div.style.margin = '10px'; // 修改div的外边距
+    div.style.textAlign = 'center'; // 修改div的文本对齐方式
+    div.style.width = '200px'; // 修改div的宽度
+    div.style.height = '100px'; // 修改div的高度    
+    div.style.lineHeight = '100px'; // 修改div的行高
+    div.style.borderRadius = '10px'; // 修改div的圆角
+    div.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)'; // 修改div的阴影
+    div.style.transition = 'all 0.5s'; // 修改div的过渡效果
+    div.style.cursor = 'pointer'; // 修改div的鼠标样式
+    div.addEventListener('click', function() {
+        alert('Hello, World!'); // 点击div时弹出提示框
+    });
+    // 通过JavaScript创建一个新的div元素
+    const newDiv = document.createElement('div');
+    newDiv.innerHTML = 'This is a new div'; // 设置新div的内容
+    newDiv.style.color = 'blue'; // 设置新div的颜色
+    newDiv.style.fontSize = '16px'; // 设置新div的字体大小
+    newDiv.style.backgroundColor = 'lightgray'; // 设置新div的背景颜色
+    newDiv.style.border = '1px solid blue'; // 设置新div的边框
+    newDiv.style.padding = '5px'; // 设置新div的内边距
+    newDiv.style.margin = '5px'; // 设置新div的外边距
+    newDiv.style.textAlign = 'left'; // 设置新div的文本对齐方式
+    newDiv.style.width = '150px'; // 设置新div的宽度
+    newDiv.style.height = '50px'; // 设置新div的高度
+    newDiv.style.lineHeight = '50px'; // 设置新div的行高
+    newDiv.style.borderRadius = '5px'; // 设置新div的圆角
+    newDiv.style.boxShadow = '0 0 5px rgba(0, 0, 0, 0.5)'; // 设置新div的阴影
+    newDiv.style.transition = 'all 0.5s'; // 设置新div的过渡效果
+    newDiv.style.cursor = 'pointer'; // 设置新div的鼠标样式
+    newDiv.addEventListener('click', function() {
+        alert('This is a new div'); // 点击新div时弹出提示框
+    });
+    // 将新div添加到页面中
+    document.body.appendChild(newDiv); // 将新div添加到body中
+    // 通过JavaScript删除一个div元素
+    // const oldDiv = document.querySelector('div'); // 选择要删除的div
+    // oldDiv.parentNode.removeChild(oldDiv); // 删除div
+
+    </script>
+
+
+</body>
+</html>

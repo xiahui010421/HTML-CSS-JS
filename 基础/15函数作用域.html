@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15函数作用域</title>
+</head>
+<body>
+    <script>
+        // 函数作用域
+        function test() {
+            var a = 10;
+            console.log(a); // 10
+        }
+        test();
+        // console.log(a); // ReferenceError: a is not defined
+
+        // 块级作用域
+        if (true) {
+            let b = 20;
+            console.log(b); // 20
+        }
+        // console.log(b); // ReferenceError: b is not defined
+
+        // 函数作用域与块级作用域的区别
+        function outer() {
+            var c = 30;
+            if (true) {
+                let d = 40;
+                console.log(c); // 30
+                console.log(d); // 40
+            }
+            // console.log(d); // ReferenceError: d is not defined
+        }
+        outer();
+
+        // 函数作用域与全局作用域
+        var e = 50;
+        function inner() {
+            var f = 60;
+            console.log(e); // 50
+            console.log(f); // 60
+        }
+        inner();
+        // console.log(f); // ReferenceError: f is not defined
+        // console.log(e); // 50
+
+        // 函数作用域与闭包
+        function closure() {
+            var g = 70;
+            return function() {
+                console.log(g); // 70
+            }
+        }
+        var innerFunc = closure();
+        innerFunc(); // 70
+        // console.log(g); // ReferenceError: g is not defined
+    </script>
+</body>
+</html>

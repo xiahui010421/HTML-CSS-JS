@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18逻辑中断</title>
+</head>
+<body>
+    <script>
+        function fn(x,y){
+            x = x || 0;
+            y = y || 0;
+            console.log(x+y);
+        }
+        fn(1,2);
+        fn(1);
+        fn(1,2,3);
+        fn();
+
+        console.log(11 && 22);//都是真 返回最后一个
+        console.log(11 || 22);//一个为假 返回第一个
+        
+        (function flexible(window , document){
+            // 获取当前设备显示比例
+            var dpr= window.devicePixelRatio || 1;
+        }(window, document));
+        
+    </script>
+</body>
+</html>

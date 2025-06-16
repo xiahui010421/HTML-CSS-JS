@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //可以遍历数组 然后返回新的数组
+        const arr = ['🐮', '🍠', '🐔', '🌽'];
+        const newArr = arr.map(function(ele,index){
+            console.log(ele, index); // ele是数组元素，index是索引
+            return ele +'hhh'; //返回的是新的处理过的数组
+        })
+        //join()方法将数组元素连接成一个字符串
+        console.log(newArr); // 输出新的数组
+        console.log(newArr.join('')); 
+    </script>
+</body>
+</html>

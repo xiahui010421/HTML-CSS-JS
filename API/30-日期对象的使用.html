@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 40px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 40px;
+
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        const div = document.querySelector('div');
+        function padZero(n) {
+            return n < 10 ? '0' + n : n;
+        }
+        
+        function getMyDate(){
+            const date = new Date();
+            return `今天是${padZero(date.getFullYear())}年
+            ${padZero(date.getMonth() + 1)}月
+            ${padZero(date.getDate())}日 
+            ${padZero(date.getHours())}:
+            ${padZero(date.getMinutes())}:
+            ${padZero(date.getSeconds())}`;
+        }
+        // 获取当前时间
+        div.innerHTML = getMyDate();
+        setInterval(() => {
+            // 每秒更新日期和时间
+            div.innerHTML = getMyDate();
+        }, 1000);
+        // const date = new Date();
+        // console.log(date); // 当前日期和时间
+        // const date1 = new Date('2023-10-01');
+        // console.log(date1); //指定时间
+
+        // console.log(date.getFullYear()); // 获取年份
+        // console.log(date.getMonth() + 1); // 获取月份（注意：月份从0开始，所以要加1）
+        // console.log(date.getDate()); // 获取日期
+        // console.log(date.getHours()); // 获取小时
+        // console.log(date.getMinutes()); // 获取分钟
+        // console.log(date.getSeconds()); // 获取秒数
+        // console.log(date.getDay()); // 获取星期几（0-6，0表示星期日）
+
+        // console.log(date.getFullYear()+'-'+(date.getMonth() + 1)+'-'+date.getDate()); // 格式化日期为 YYYY-MM-DD
+        // console.log(date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()); // 格式化时间为 HH:MM:SS
+        // console.log(date.toLocaleDateString()); // 本地化日期字符串
+
+</script>
+</body>
+</html>

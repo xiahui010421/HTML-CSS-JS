@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        !function(){
+            const userAgent = navigator.userAgent;
+            const Androide = userAgent.match(/(Android);?[\s\/]+([\d.]+)?/);
+            const iOS = userAgent.match(/(iPad).*OS\s([\d_]+)/) || userAgent.match(/(iPod)(.*OS\s([\d_]+))?/) || userAgent.match(/(iPhone\sOS)\s([\d_]+)/);
+            if(Androide ||iOS){
+                location.href = 'http://m.baidu.com';
+            }
+        }();
+        // 另一种写法
+        //(function(){})
+        //!function(){}()
+    </script>
+</head>
+<body>
+    <button>后退</button>
+    <button>前进</button>
+    <a href="https://www.baidu.com">1</a>
+    <script>
+        const back = document.querySelector('button:nth-child(1)');
+        const forward = back.nextElementSibling;
+        back.addEventListener('click', function() {
+            history.back(); // 后退
+        });
+        forward.addEventListener('click', function() {
+            history.forward(); // 前进
+        });
+        // history.go(1); // 前进1步
+        // history.go(-1); // 后退1步
+        // history.go(0); // 刷新页面
+    </script>
+</body>
+</html>

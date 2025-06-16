@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06-操作元素属性</title>
+    <style>
+        body {
+            background: url(../images/1.webp) no-repeat center / cover;
+        }
+        img {
+            width: 438px;
+            height: 438px;
+            border: 1px solid #ccc;
+            display: block;
+            margin: 20px auto;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #e9a2bc;
+            border: 1px solid #ccc;
+            margin: 20px auto;
+            text-align: center;
+            line-height: 200px;
+            font-size: 24px;
+            color: #9bcac7;
+            transition: all 2s;
+            cursor: pointer; /* 鼠标悬停时显示为手型 */
+
+        }
+    </style>
+</head>
+<body>
+    <img src="../images/1.webp" alt="" >
+    <div class="box">一二布布</div>
+    <script>
+        //常用属性
+        function getRandom(N,M){
+            return Math.floor(Math.random() * (M - N + 1)) + N;
+        }
+        const img = document.querySelector('img');
+        const random = getRandom(1, 11);
+        img.src = `../images/${random}.webp`; // 修改图片的src属性
+
+        //样式属性
+        const box = document.querySelector('.box');
+        box.style.width = '300px'; // 修改宽度
+        box.style.border = '2px solid blue'; // 修改边框样式
+        box.style.transition = 'all 2s'; // 添加过渡效果
+        box.addEventListener('click', () => {
+            box.style.width = getRandom(100, 500) + 'px'; // 点击时随机改变宽度
+            box.style.height = getRandom(100, 500) + 'px'; // 点击时随机改变高度
+            box.style.borderRadius = getRandom(0, 100) + 'px'; // 随机圆角
+            box.style.backgroundColor = `rgb(${getRandom(0, 255)}, ${getRandom(0, 255)}, ${getRandom(0, 255)})`; // 随机背景颜色
+        });
+
+        function randomSingle(N){
+            return Math.floor(Math.random() * N) + 1; // 生成1到N之间的随机数
+        }
+        // 修改body的背景图片
+        document.body.style.backgroundImage = `url(../images/${randomSingle(11)}.webp)`; // 点击时随机改变背景图片
+
+    </script>
+</body>
+</html>

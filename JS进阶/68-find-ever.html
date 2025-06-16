@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <ul>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+    </ul>
+    <script>
+        // const arr = ['red','blue','purple']
+        // const result = arr.find((item)=>{
+        //     return item ==='blue'
+        // })
+        // console.log(result);
+        
+        const Goods = [
+            {
+                name:'xiaomi',
+                price:1000
+            },
+            {
+                name:'huawei',
+                price:100000
+            },
+            {
+                name:'xiaomi',
+                price:2343
+            },
+            {
+                name:'apple',
+                price:20000
+            }
+        ]
+        const result = Goods.find(item=>{
+            // console.log(item.name)
+            //但是他只找一次，智能找到一个小米 返回数组元素
+            return item.name==='xiaomi'
+        })
+        console.log(result);
+        
+
+
+        //every
+        const arr = [20,30,40]
+        console.log(arr.every(item=>item>=10))
+        console.log(arr.some(item=>item<=20))
+
+
+        //practice
+        const spec = {size:'40cm*40cm',color:'black'}
+        console.log(Object.values(spec).join('/'))
+        // 写到div标签里面去 40cm*40cm/black
+        const div = document.querySelector('div')
+        div.innerHTML = `${spec.size}/${spec.color}`
+
+
+        //Array.form伪数组转换为真数组
+        const lis = document.querySelectorAll('ul li')
+        console.log(lis);
+        const liss = Array.from(lis)
+        liss.pop()
+        liss.pop()
+        console.log(liss);
+
+        
+    </script>
+</body>
+</html>

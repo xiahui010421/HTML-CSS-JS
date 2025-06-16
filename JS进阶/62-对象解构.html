@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const pig = [{
+            name: '小猪佩奇',
+            age: 3,
+            sayHello: function() {
+                console.log(`你好，我是${this.name}，今年${this.age}岁了！`);
+            }
+        }];
+        const [{name:uname, age, sayHello}] = pig;
+        console.log(`名字: ${uname}, 年龄: ${age}`);
+        pig[0].sayHello(); // 调用方法，输出: 你好，我是小猪佩奇，今年3岁了！
+        
+
+        const pig2 = {
+            name: '小猪佩奇',
+            age: 3,
+            family: {
+                father: '猪爸爸',
+                mother: '猪妈妈',
+                brother: '乔治'
+            }
+        };
+        const {name:uname2, age:age2, family: {father, mother, brother}} = pig2;
+        console.log(`名字: ${uname2}, 年龄: ${age2}`);
+        console.log(`爸爸: ${father}, 妈妈: ${mother}, 兄弟: ${brother}`);
+
+
+    // 1. 这是后台传递过来的数据
+    const msg = {
+      "code": 200,
+      "msg": "获取新闻列表成功",
+      "data": [
+        {
+          "id": 1,
+          "title": "5G商用自己，三大运用商收入下降",
+          "count": 58
+        },
+        {
+          "id": 2,
+          "title": "国际媒体头条速览",
+          "count": 56
+        },
+        {
+          "id": 3,
+          "title": "乌克兰和俄罗斯持续冲突",
+          "count": 1669
+        },
+
+      ]
+    }
+    // 2. 解构赋值获取数据
+    // const { data}=msg;
+    // console.log(data); // 输出: 数组数据
+    function render({data:mydata}) {
+        console.log(mydata)
+
+    }
+    render(msg)
+    </script>
+</body>
+</html>

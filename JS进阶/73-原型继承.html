@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //放在原型上才能继承 公共部分
+        function Person (){
+            this.eyes = 2,
+            this.ears = 2,
+            this.nose = 1,
+            this.mouth = 1
+        }
+        //原型继承
+        function woman(){}
+        woman.prototype = new Person(); // 创建一个Person的实例并赋值给woman的原型
+        woman.prototype.constructor = woman; // 修正构造函数指向
+        woman.prototype.baby = function(){
+            console.log('生孩子');
+        }
+
+        // console.log(woman.prototype.constructor === woman); // 输出: true
+        // console.log(Person.constructor === Object)
+        const woman1 = new woman();
+        console.log(woman1); // 输出: 2
+        //woman1.__proto__ === Person // true
+        //woman.prototype.constructor === woman // true
+        //woman1.__proto__.constructor === woman // true
+        //woman1.constructor === woman // true
+       
+
+        function man(){}
+        man.prototype = new Person();
+        const man1 = new man();
+        // const woman = Object.create(Person);
+        // const man = Object.create(Person);
+        // console.log(woman.eyes);
+        console.log(man1);
+    </script>
+</body>
+</html>

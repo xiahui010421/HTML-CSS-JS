@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="username" placeholder="请输入用户名">
+        <input type="password" name="password" placeholder="请输入密码">
+        <button type="submit">登录</button>
+    </form>
+    <a href="#/my">我的</a>
+    <a href="#/friend">关注</a>
+    <a href="#/download">下载</a>
+    <button class="reload">刷新</button>
+    <!-- <a href="https://www.baidu.com">支付成功，<span>5</span>后跳转页面</a> -->
+    <script>
+        // setTimeout(() => {
+        //     location.href = 'https://www.baidu.com'; // 跳转到百度
+        // }, 3000); // 3秒后执行
+
+        //location。href
+        //支付成功，跳转到支付成功页面
+        // const a = document.querySelector('a');
+        // let num = 5;
+        // setInterval(function(){
+        //     num--;
+        //     a.querySelector('span').innerText = num;
+        //     if(num <= 0){
+        //         clearInterval(this);
+        //         location.href = 'https://www.baidu.com'; // 跳转到百度
+        //     }
+        // },1000)
+
+        //location.search
+        //location.hash
+        //location.reload()
+        const reload = document.querySelector('.reload');
+        reload.addEventListener('click', function() {
+            location.reload(); // 刷新页面
+        });
+    </script>
+</body>
+</html>

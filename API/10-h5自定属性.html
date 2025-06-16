@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div data-id="1" data-spm="不知道">1</div>
+    <div data-id="2">2</div>
+    <div data-id="3">3</div>
+    <div data-id="4">4</div>
+    <div data-id="5">5</div>
+    <script>
+        const one = document.querySelector('div:nth-child(1)');
+        const two = document.querySelector('div:nth-child(2)'); 
+        const three = document.querySelector('div:nth-child(3)');
+        const four = document.querySelector('div:nth-child(4)');
+        const five = document.querySelector('div:nth-child(5)');
+        console.log(one.dataset); // 获取所有自定义属性
+        one.dataset.spm = '123'; // 设置自定义属性
+        console.log(one.dataset); 
+    </script>
+</body>
+</html>

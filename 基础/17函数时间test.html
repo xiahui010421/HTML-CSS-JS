@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let seconds = prompt("请输入多少秒：");
+        function getTime(t){
+            // let hour = Math.floor(t / 3600);
+            // let minute = Math.floor((t - hour * 3600) / 60);
+            // let second = t - hour * 3600 - minute * 60;
+            // console.log(hour + "小时" + minute + "分钟" + second + "秒");
+            // console.log("小时：" + hour);
+            // console.log("分钟：" + minute);
+            // console.log("秒：" + second);
+            let h = parseInt(t/60/60%24);
+            let m = parseInt(t/60%60);
+            let s = parseInt(t%60);
+            h<10?h="0"+h:h;
+            m<10?m="0"+m:m;
+            s<10?s="0"+s:s;
+            return h + ":" + m + ":" + s;
+        
+        }
+        getTime(seconds);
+        console.log(getTime(seconds));
+    </script>
+</body>
+</html>

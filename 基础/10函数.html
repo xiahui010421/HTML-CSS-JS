@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数</title>
+</head>
+<body>
+    <script>
+        //传参
+        function getSum(num1=0,num2=0) {
+            let sum = 0;
+            for(let i = num1; i<=num2; i++){
+                sum += i;
+            }
+            console.log(`从${num1}到${num2}的和为：${sum}`)
+        }
+        getSum(1,100)
+        
+    </script>
+</body>
+</html>

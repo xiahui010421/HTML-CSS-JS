@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getSum(){
+            // console.log(arguments)
+            let sum = 0;
+            // arguments 是一个类数组对象，包含了所有传入函数的参数
+            for (let i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            console.log(sum);
+        }
+        getSum(1, 2, 3, 4, 5); // 输出: 15
+
+
+        //剩余参数
+        function getSum2(...arr) {
+            // arr 是一个真正的数组，包含了所有传入函数的参数
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+            console.log(sum);
+        }
+        getSum2(1, 2, 3, 4, 5); // 输出: 15
+
+
+        //箭头函数
+        const fn=(x)=>{
+            console.log('箭头函数',x)
+        }
+        fn(1); // 输出: 箭头函数
+        //一个参数 省略小括号
+        const fn1 = x =>{
+            console.log(x)
+        }
+        fn1(1)
+        //一行 省略大括号
+        const fn2 = x => console.log(x)
+        fn2(2)
+        //可以省略return
+        const fn3 = x => x+x
+        console.log(fn3(3))
+        //直接返回一个对象--{chongtu}-->({})
+        const fn4 = (uname) => ({uname:uname})
+        console.log(fn4('xiahui'))
+        
+
+        //箭头函数没有arguments 值哟。。。arr
+        const getSum3 = (...arr) => {
+            let sum = 0
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i]
+            }
+            return sum
+        }
+        const result = getSum3(2,3,4,4)
+        console.log(result);
+        
+    </script>
+</body>
+</html>

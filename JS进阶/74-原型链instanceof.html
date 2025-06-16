@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Object(){
+
+        }
+        function Person(){
+
+        }
+        console.log(Person.prototype.__proto__);//上一级的原型是Object.prototype
+        console.log(Object.prototype);// 
+        console.log(Object.prototype.__proto__);//null
+        
+        console.log(Array instanceof Object); // true
+        console.log(Object instanceof Function); // true
+        console.log(Object instanceof Object); // true
+        console.log(Person instanceof Function); // true
+        console.log(Person instanceof Object); // true
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11函数的封装数组求和</title>
+</head>
+<body>
+    <script>
+        function getSum(arr=[]) {
+            let sum = 0;
+            for(let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+            console.log(`数组的和为：${sum}`);
+        }
+        getSum([1, 2, 3, 4, 5]); // 调用函数并传入数组
+        getSum([10, 20, 30]); // 调用函数并传入另一个数组
+        getSum([100, 200, 300, 400]); // 调用函数并传入另一个数组
+
+        //实参可以是变量
+        let num3 = Number(prompt("请输入启始值"))
+        let num4 = Number(prompt("请输入结束值"))
+        function getSum(num3=0,num4=0) {
+            let sum = 0;
+            for(let i = num3; i <= num4; i++) {
+                sum += i;
+            }
+            console.log(`${num3}到${num4}的和为：${sum}`);
+        }
+        getSum(num3, num4); 
+    </script>
+</body>
+</html>

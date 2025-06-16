@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .list {
+      width: 990px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 100px;
+    }
+
+    .item {
+      width: 240px;
+      margin-left: 10px;
+      padding: 20px 30px;
+      transition: all .5s;
+      margin-bottom: 20px;
+    }
+
+    .item:nth-child(4n) {
+      margin-left: 0;
+    }
+
+    .item:hover {
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+      transform: translate3d(0, -4px, 0);
+      cursor: pointer;
+    }
+
+    .item img {
+      width: 100%;
+    }
+
+    .item .name {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #666;
+    }
+
+    .item .price {
+      font-size: 22px;
+      color: firebrick;
+    }
+
+    .item .price::before {
+      content: "¥";
+      font-size: 14px;
+    }
+    </style>
+</head>
+<body>
+    <div class="list">
+        <div class="item">
+            <img src="../images/1.webp" alt="">
+            <div class="name">洗发水</div>
+            <div class="price">99.00</div>
+        </div>
+        <div class="item">
+            <img src="../images/2.webp" alt="">
+            <div class="name">沐浴露</div>
+            <div class="price">89.00</div>
+        </div>
+        <div class="item">
+            <img src="../images/7.webp" alt="">
+            <div class="name">护发素</div>
+            <div class="price">79.00</div>
+        </div>
+        <div class="item">
+            <img src="../images/9.webp" alt="">
+            <div class="name">洗面奶</div>
+            <div class="price">69.00</div>
+        </div>
+    </div>
+    <script>
+
+        const data = [
+            {id:1 ,name: '洗发水', price: 99.00, img: '../images/1.webp' },
+            {id:2 ,name: '沐浴露', price: 89.00, img: '../images/2.webp' },
+            {id:3 ,name: '护发素', price: 79.00, img: '../images/7.webp' },
+            {id:4 ,name: '洗面奶', price: 69.00, img: '../images/9.webp' }
+        ];
+        let str = ''
+        data.forEach(item=>{
+            // console.log(item)
+            const {name, price, img} = item
+            str +=`
+            <div class="item">
+                <img src="${img}" alt="">
+                <div class="name">${name}</div>
+                <div class="price">${price}</div>
+            </div>
+            `
+
+        })
+        document.querySelector('.list').innerHTML = str
+
+
+        //价格筛选
+        
+    </script>
+</body>
+</html>

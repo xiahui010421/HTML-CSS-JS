@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19转换布尔型及作业</title>
+</head>
+<body>
+    <script>
+        // console.log(Boolean(0)); // false
+        // console.log(Boolean(1)); // true
+        // console.log(Boolean("")); // false
+        // console.log(Boolean(" ")); // true
+        // console.log(Boolean("0")); // true
+        // console.log(Boolean("false")); // true
+        // console.log(Boolean(null)); // false
+        // console.log(Boolean(undefined)); // false
+        // console.log(Boolean(NaN)); // false
+        // console.log(Boolean([])); // false
+        // console.log(Boolean([1, 2, 3])); // true
+        // console.log(Boolean({})); // true
+
+        //交换变量
+        function changeNumber(num1,num2){
+            let num = num1;
+            num1 = num2;
+            num2 = num;
+            document.write(num1,num2);
+            return 0;
+            }
+        changeNumber(1,2);
+
+        //银行卡余额
+        // function result(){
+        //     let a = prompt("银行卡金额");
+        //     let b = prompt("吃的");
+        //     let c = prompt("喝的");
+        //     let d = a - b - c;
+        //     return d;
+        // }
+        // let money = result();
+        // document.write("银行卡余额为" + money);
+
+        //求和或平均值
+        function handleData(arr ,flag='true'){
+             let sum = 0;
+             for(let i = 0; i < arr.length; i++){
+                    sum += arr[i];
+             }
+             if(flag){
+                return sum;
+            }else{
+                return sum / arr.length;
+            }
+        }
+        console.log(handleData([1,2,3,4,5]));
+        console.log(handleData([1,2,3,4,5],false));
+        console.log(handleData([1,2,3,4,5],true));
+
+
+        //需求:封装某些函数查看数组是否存在某个元素。要传递2个参数 元素、数组，如果数组存在元素则返回真，如果没有存在元素就返回假
+        //例如检测香蕉是否存在于数组【"苹果'，"香蕉'，"橘子'，'荔枝'，"梨子"1中】，返回结果是真
+        function checkArray(arr, element){
+            for(let i = 0; i < arr.length; i++){
+                if(arr[i] === element){
+                    return true;
+                }
+            }
+            return false;
+        }
+        console.log(checkArray(["苹果", "香蕉", "橘子", "荔枝", "梨子"], "香蕉")); // true
+        console.log(checkArray(["苹果", "香蕉", "橘子", "荔枝", "梨子"], "西瓜")); // false
+
+        //2.7.拓展题2
+        //需求:封装find Index函数返回查找元素在数组中的索引号。要传递2个参数 元素、数组。
+        //，如果找到，则返回查找元素在数组中的索引号，如果查找不到，则返回-1例如检测 香蕉 数组[苹果，香蕉'，橘子，茘枝，梨子门中，返回结果是 1
+        function findIndex(arr, element){
+            for(let i = 0; i < arr.length; i++){
+                if(arr[i] === element){
+                    return i;
+                }
+            }
+            return -1;
+        }
+        console.log(findIndex(["苹果", "香蕉", "橘子", "荔枝", "梨子"], "香蕉")); // 1
+        console.log(findIndex(["苹果", "香蕉", "橘子", "荔枝", "梨子"], "西瓜")); // -1
+        
+        //拓展题3
+        //需求:封装一个函数，传递两个参数，一个是数组，一个是数字，返回数组中大于这个数字的元素组成的新数组
+        //例如传递数组[1，2，3，4，5]和数字3，返回新数组[4，5]
+        function filterArray(arr, num){
+            let newArr = [];
+            for(let i = 0; i < arr.length; i++){
+                if(arr[i] > num){
+                    newArr.push(arr[i]);
+                }
+            }
+            return newArr;
+        }
+        console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+        
+
+    </script>
+</body>
+</html>

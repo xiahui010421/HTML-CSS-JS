@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = prompt("请输入一个数字：");
+        console.log(typeof num); // string默认
+        num = parseInt(num);
+        console.log(typeof num); // number
+
+        // 1. 直接转换
+        let num1 = Number(num);
+        console.log(num1); // 123
+        console.log(typeof num1); // number
+        // 2. parseInt转换
+        let num2 = parseInt(num);
+        console.log(num2); // 123
+        console.log(typeof num2); // number
+        // 3. parseFloat转换
+        let num3 = parseFloat(num);
+        console.log(num3); // 123
+        console.log(typeof num3); // number
+        // 4. 加法转换
+        let num4 = +num;
+        console.log(num4); // 123
+        console.log(typeof num4); // number
+        // 5. 位运算转换
+        let num5 = ~~num;
+        console.log(num5); // 123
+        console.log(typeof num5); // number
+
+        console.log('110000'+'2000')
+        console.log(110000+2000)
+        console.log('110000' - '2000')
+        console.log(110000 - 2000)
+        console.log(typeof +'110000')
+
+        
+
+    </script>
+</body>
+</html>

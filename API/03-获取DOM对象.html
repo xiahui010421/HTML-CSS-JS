@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-获取DOM对象</title>
+    <style> 
+        .box{
+            width: 100px;
+            height: 100px;
+            background: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">123</div>
+    <div class="box">abc</div>
+    <p id="nav">导航栏</p>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script>
+        //CSS选择器
+        // 获取匹配的第一个对象
+        // const box = document.querySelector('div')
+        // const box = document.querySelector('.box')
+        const nav = document.querySelector('#nav')
+        console.log(nav)
+        nav.style.color='red'
+        // console.log(box);
+        //对象集合-列表方式
+        const lis = document.querySelectorAll('ul li')//NodeList(4) [li, li, li, li]
+        console.log(lis)
+    </script>
+</body>
+</html>

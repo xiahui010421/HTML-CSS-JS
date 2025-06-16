@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建一个空对象
+        // let obj = {};
+        // obj.name = "张三";
+        // obj.age = 25;
+        // // 创建一个对象并初始化属性
+        // const obj = new Object({name: '张三',age : 10})
+        //构造函数创建
+        function Person(name, age) {
+            this.name = name;
+            this.age = age; 
+        }
+        const person1 = new Person('李四', 30);
+        const person2 = new Person('王五', 28);
+        console.log(person1.name); // 输出: 李四
+        console.log(person2.age); // 输出: 28
+
+        function Goods(name ,price ,count){
+            this.name = name;
+            this.price = price;
+            this.count = count;     
+        }
+        console.log(new Goods('苹果', 5, 10)); // 输出: Goods { name: '苹果', price: 5, count: 10 }
+
+        // 使用类创建对象
+        class Animal {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+                this.speak = function() {
+                    
+                    console.log(`${this.name} makes a noise.`);
+                }
+            }
+        }   
+        const dog = new Animal('Dog', 5);
+        dog.name = '小狗'//实例属性
+        console.log(dog)
+        dog.speak(); // 输出: 小狗 makes a noise.
+
+
+
+        //
+        const cat = {
+            name: 'Cat',
+            age: 3,
+            speak: function() {
+                console.log(`${this.name} meows.`);
+            }
+        }
+        console.log(Object.keys(cat)); // 输出: ['name', 'age', 'speak']
+        console.log(Object.values(cat)); // 输出: ['Cat', 3, ƒ speak()]
+        console.log(Object.entries(cat)); // 输出: [['name', 'Cat'], ['age', 3], ['speak', ƒ speak()]]
+
+        const o = {name: '张三', age: 25};
+        const oo ={}
+        // console.log(Object.assign(oo, o)); //可以用来拷贝
+        Object.assign(o,{gender:'male'})//也可以添加属性
+        console.log(o)
+
+
+        //
+        const arr = [10,20,30,40]
+        const result6 = arr.reduce(function(prev,current){
+            return prev+current
+        },0)
+        console.log(result6)
+
+        const result7 = arr.reduce((prev,current)=>prev+current,10)
+        console.log(result7)
+
+    </script>
+</body>
+</html>

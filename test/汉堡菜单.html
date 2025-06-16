@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式布局示例</title>
+    <style>
+        :root {
+            --primary-color: #2196F3;
+            --secondary-color: #4CAF50;
+            --text-color: #333;
+            --background: #f5f5f5;
+            --radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* 导航栏样式 */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 15px 20px;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .hamburger-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            display: none; /* 桌面端隐藏 */
+        }
+
+        .bar {
+            width: 28px;
+            height: 3px;
+            background: var(--text-color);
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: #555;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* 内容区样式 */
+        .content {
+            margin-top: 80px; /* 导航栏高度 */
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 图片自适应 */
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .primary-btn {
+            background-color: var(--primary-color);
+            color: white;
+            margin-right: 5px;
+        }
+
+        .primary-btn:hover {
+            background-color: #1a73e8;
+        }
+
+        .secondary-btn {
+            background-color: #f0f0f0;
+            color: var(--text-color);
+        }
+
+        .secondary-btn:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: flex; /* 移动端显示菜单按钮 */
+            }
+
+            .nav-list {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                width: 100%;
+                max-width: 280px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                transition: left 0.3s ease;
+                box-shadow: 0 0 12px rgba(0,0,0,0.1);
+            }
+
+            .nav-list.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 15px 0;
+            }
+
+            .nav-link {
+                font-size: 16px;
+            }
+
+            /* 汉堡菜单动画 */
+            .hamburger-menu.active .bar:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+
+            .hamburger-menu.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger-menu.active .bar:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+
+            /* 内容区单列布局 */
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="#" class="logo">My Website</a>
+            <div class="hamburger-menu" id="menuBtn">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-list" id="navList">
+                <li class="nav-item"><a href="#" class="nav-link">首页</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">产品</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">服务</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">关于</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 内容区 -->
+    <main class="content">
+        <!-- 卡片示例1 -->
+        <div class="card">
+            <div class="card-image">
+                <img src="https://picsum.photos/300/200?random=1" alt="产品图片">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">产品名称</h2>
+                <p>这里是产品描述...</p>
+                <a href="#" class="primary-btn">立即购买</a>
+                <a href="#" class="secondary-btn">了解更多</a>
+            </div>
+        </div>
+
+        <!-- 卡片示例2 -->
+        <div class="card">
+            <div class="card-image">
+                <img src="https://picsum.photos/300/200?random=2" alt="产品图片">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">服务项目</h2>
+                <p>这里是服务描述...</p>
+                <a href="#" class="primary-btn">预约服务</a>
+                <a href="#" class="secondary-btn">查看详情</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 汉堡菜单交互
+        const menuBtn = document.getElementById('menuBtn');
+        const navList = document.getElementById('navList');
+
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            navList.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

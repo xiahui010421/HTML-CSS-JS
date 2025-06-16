@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22渲染学生信息表</title>
+</head>
+<body>
+    <script>
+        let students = [
+            {
+                name: "张三",
+                age: 20,
+                gender: "男",
+                address: "北京市朝阳区",
+            },
+            {
+                name: "李四",
+                age: 22,
+                gender: "女",
+                address: "上海市浦东新区",
+            },
+            {
+                name: "王五",
+                age: 21,
+                gender: "男",
+                address: "广州市天河区",
+            },
+            {
+                name: "赵六",
+                age: 23,
+                gender: "女",
+                address: "深圳市南山区",
+            }
+        ]
+        for(let i=0;i<students.length;i++){
+            console.log(students[i])
+        }
+            
+
+        for(let i=0;i<students.length;i++){
+            console.log("姓名："+students[i].name);
+            console.log("年龄："+students[i].age);
+            console.log("性别："+students[i].gender);
+            console.log("地址："+students[i].address);
+            console.log("--------------------");
+        }
+        //创建表格
+        let table = document.createElement("table");
+        table.border = "1";
+        table.style.width = "100%";
+        table.style.borderCollapse = "collapse";
+        table.style.textAlign = "left";
+        //创建表头
+        let thead = document.createElement("thead");
+        let headerRow = document.createElement("tr");
+        let headers = ["姓名", "年龄", "性别", "地址"];
+        for (let i = 0; i < headers.length; i++) {
+            let th = document.createElement("th");
+            th.innerText = headers[i];
+            th.style.padding = "10px";
+            th.style.backgroundColor = "#f2f2f2";
+            headerRow.appendChild(th);
+        }
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+        //创建表格主体
+        let tbody = document.createElement("tbody");
+        for (let i = 0; i < students.length; i++) {
+            let row = document.createElement("tr");
+            let student = students[i];
+            for (let key in student) {
+                let td = document.createElement("td");
+                td.innerText = student[key];
+                td.style.padding = "10px";
+                row.appendChild(td);
+            }
+            tbody.appendChild(row);
+        }
+        table.appendChild(tbody);
+        //将表格添加到页面
+        document.body.appendChild(table);
+        //设置表格样式
+        table.style.border = "1px solid #000";
+        table.style.borderCollapse = "collapse";    
+        table.style.width = "80%";
+        table.style.margin = "20px auto";
+        table.style.fontFamily = "Arial, sans-serif";
+        table.style.fontSize = "16px";
+        table.style.textAlign = "left";
+        table.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
+        //设置表头样式
+        thead.style.backgroundColor = "#f2f2f2";
+        thead.style.color = "#333";
+        thead.style.fontWeight = "bold";
+        thead.style.textAlign = "center";
+        //设置表格单元格样式
+        let tds = table.getElementsByTagName("td");
+        for (let i = 0; i < tds.length; i++) {
+            tds[i].style.border = "1px solid #ddd";
+            tds[i].style.padding = "10px";
+            tds[i].style.textAlign = "center";
+        }
+        //设置表格行样式
+        let rows = table.getElementsByTagName("tr");
+        for (let i = 1; i < rows.length; i++) {
+            if (i % 2 === 0) {
+                rows[i].style.backgroundColor = "#f9f9f9";
+            } else {
+                rows[i].style.backgroundColor = "#fff";
+            }
+        }
+       
+    </script>
+</body>
+</html>

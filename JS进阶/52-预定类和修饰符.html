@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <script>
+        //修饰符
+        // i: 忽略大小写
+        const str = 'Hello World';
+        const reg = /hello/i; // 忽略大小写
+        console.log(reg.test(str)); // true
+        // g: 全局匹配
+        const str2 = 'abcabcabc';
+        const reg2 = /abc/g; // 全局匹配
+        console.log(str2.match(reg2)); // ['abc', 'abc', 'abc']
+       
+        //replace
+        const str4 = '我喜欢Java编程语言，Java是世界上最流行的编程语言之一。';
+        const reg4 = /Java/g;
+        console.log(str4.replace(reg4, 'h5')); 
+        //敏感词替换
+        const sensitiveWords = ['傻逼', '你妈'];
+        const str5 = '我是一个大聪明，你是一个傻逼，卧槽你妈';
+        let result = str5;
+        sensitiveWords.forEach(word => {
+            const reg5 = new RegExp(word, 'g'); // 动态创建正则表达式
+            result = result.replace(reg5, '*'.repeat(word.length)); // 替换敏感词为星号
+        });
+        console.log(result); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16匿名函数</title>
+</head>
+<body>
+    <script>
+        //1,函数表达式
+        let fn = function() {
+        }
+        console.log(fn); // [Function: fn]
+        //2,函数表达式必须先声明才能调用
+        // fn1(); // TypeError: fn1 is not a function
+        let fn1 = function() {
+            console.log('fn1');
+        }
+        fn1(); // fn1
+        //3,函数表达式可以赋值给变量
+        let fn2 = function() {
+            console.log('fn2');
+        }
+        fn2(); // fn2
+        //4,函数表达式可以作为参数传递
+        function fn3(fn) {
+            fn();
+        }
+        fn3(function() {
+            console.log('fn3');
+        }); // fn3
+        //5,函数表达式可以作为返回值
+        function fn4() {
+            return function() {
+                console.log('fn4');
+            }
+        }
+        let fn5 = fn4();
+        fn5(); // fn4
+        //6,函数表达式可以作为对象的属性
+        let obj = {
+            fn6: function() {
+                console.log('fn6');
+            }
+        }
+        obj.fn6(); // fn6
+        //7,函数表达式可以作为数组的元素
+        let arr = [
+            function() {
+                console.log('fn7');
+            }
+        ]
+        arr[0](); // fn7
+        //8,函数表达式可以作为事件的处理函数
+        let btn = document.createElement('button');
+        btn.innerHTML = '点击我';
+        document.body.appendChild(btn);
+        btn.addEventListener('click', function() {
+            console.log('按钮被点击了');
+        });
+        
+
+        //匿名函数----立即执行函数
+        (function() {
+            console.log('立即执行函数');
+        })(); // 立即执行函数
+        //1,立即执行函数的定义
+        // 立即执行函数是一个函数表达式，它在定义后立即执行
+        //2,立即执行函数的语法
+        // (function() {
+        //     console.log('立即执行函数');
+        // })();
+        //3,立即执行函数的作用
+        // 立即执行函数可以创建一个新的作用域，避免变量污染全局作用域
+        //4,立即执行函数的语法
+        // 立即执行函数的语法是将函数表达式用括号括起来，然后在后面加上括号
+        //5,立即执行函数的参数
+        // 立即执行函数可以接收参数 
+        (function(a, b) {
+            console.log(a + b);
+        })(1, 2); // 3
+        //6,立即执行函数的返回值
+        // 立即执行函数可以返回值
+        let result = (function(a, b) {
+            return a + b;
+        })(1, 2);
+        console.log(result); // 3
+        //7,立即执行函数的作用域
+        // 立即执行函数可以创建一个新的作用域，避免变量污染全局作用域
+        (function() {
+            var a = 1;
+            console.log(a); // 1
+        })();
+        // console.log(a); // ReferenceError: a is not defined
+   
+    </script>
+</body>
+</html>

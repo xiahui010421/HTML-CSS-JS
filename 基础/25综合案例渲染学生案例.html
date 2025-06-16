@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25综合案例渲染学生案例</title>
+</head>
+<body>
+    <script>
+        let students = [
+            {
+                name: "张三",
+                age: 20,
+            } ,
+            {
+                name: "李四",
+                age: 22,
+            },
+            {
+                name: "王五",
+                age: 21,
+            },
+            {
+                name: "赵六",
+                age: 23,
+            },
+            {
+                name: "钱七",
+                age: 24,
+            },
+        ]
+        // 1. 渲染学生信息
+        function renderStudents() {
+            let studentList = document.createElement('ul');
+            students.forEach(student => {
+                let li = document.createElement('li');
+                li.textContent = `${student.name} - ${student.age}岁`;
+                studentList.appendChild(li);
+            });
+            document.body.appendChild(studentList);
+        }
+        renderStudents();
+        // 2. 添加新学生
+        function addStudent(name, age) {
+            students.push({ name, age });
+            renderStudents();
+        }
+        // 示例：添加新学生
+        addStudent("小明", 25);
+        // 3. 删除学生
+        function deleteStudent(index) {
+            if (index >= 0 && index < students.length) {
+                students.splice(index, 1);
+                renderStudents();
+            } else {
+                console.log("无效的索引");
+            }
+        }
+        // 示例：删除第一个学生
+        deleteStudent(0);
+        // 4. 修改学生信息
+        function updateStudent(index, name, age) {
+            if (index >= 0 && index < students.length) {
+                students[index] = { name, age };
+                renderStudents();
+            } else {
+                console.log("无效的索引");
+            }
+        }
+        // 示例：修改第一个学生的信息
+        updateStudent(0, "小红", 26);
+        // 5. 查找学生
+        function findStudent(name) {
+            let student = students.find(student => student.name === name);
+            if (student) {
+                console.log(`找到学生: ${student.name} - ${student.age}岁`);
+            } else {
+                console.log("未找到该学生");
+            }
+        }
+        // 示例：查找学生
+        findStudent("小红");
+        // 6. 随机获取学生
+        function getRandomStudent() {
+            let randomIndex = Math.floor(Math.random() * students.length);
+            return students[randomIndex];
+        }
+        // 示例：获取随机学生
+        let randomStudent = getRandomStudent();
+        // 7. 统计学生人数
+        function getStudentCount() {
+            return students.length;
+        }
+        // 示例：获取学生人数
+        let studentCount = getStudentCount();
+        // 8. 清空学生列表
+        function clearStudents() {
+            students = [];
+            renderStudents();
+        }
+        // 示例：清空学生列表
+        clearStudents();
+        // 9. 排序学生列表
+        function sortStudents() {
+            students.sort((a, b) => a.age - b.age);
+            renderStudents();
+        }
+        // 示例：排序学生列表
+        sortStudents();
+        // 10. 过滤学生列表
+        function filterStudents(minAge) {
+            let filteredStudents = students.filter(student => student.age >= minAge);
+            let studentList = document.createElement('ul');
+            filteredStudents.forEach(student => {
+                let li = document.createElement('li');
+                li.textContent = `${student.name} - ${student.age}岁`;
+                studentList.appendChild(li);
+            });
+            document.body.appendChild(studentList);
+        }
+        // 示例：过滤学生列表
+        filterStudents(22);
+        // 11. 生成随机学生
+        function generateRandomStudent() {
+            let names = ["小明", "小红", "小刚", "小丽", "小华"];
+            let randomName = names[Math.floor(Math.random() * names.length)];
+            let randomAge = Math.floor(Math.random() * 10) + 20; // 随机年龄在20到29之间
+            return { name: randomName, age: randomAge };
+        }
+        // 示例：生成随机学生
+        let newStudent = generateRandomStudent();
+        // 12. 学生信息验证
+        function validateStudent(name, age) {
+            if (typeof name === "string" && typeof age === "number" && age > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        // 示例：验证学生信息
+        let isValid = validateStudent("小明", 25);
+        if (isValid) {
+            console.log("学生信息有效");
+        } else {
+            console.log("学生信息无效");
+        }
+        // 13. 学生信息格式化
+        function formatStudentInfo(student) {
+            return `${student.name} - ${student.age}岁`;
+        }   
+       
+
+    </script>
+</body>
+</html>

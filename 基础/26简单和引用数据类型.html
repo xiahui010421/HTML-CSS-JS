@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //值类型---栈
+        let a = 10;
+        let d = a; //值类型，复制的是值
+        d = 20;
+        console.log(a); //10
+        console.log(d); //20
+        //值类型包括：Number、String、Boolean、undefined、null、Symbol、BigInt
+
+
+        //引用类型---堆
+        
+        let b = {
+            name: '张三',
+            age: 18
+        }
+        let c = b;
+        c.name = '李四';
+        console.log(b.name); //李四
+        console.log(c.name); //李四
+        //引用类型包括：Object、Array、Function、Date、RegExp、Error、Map、Set、WeakMap、WeakSet
+        //引用类型的变量存储的是对象在内存中的地址，而不是对象本身
+        //引用类型的变量可以指向同一个对象，所以修改其中一个变量的值会影响到另一个变量
+
+
+
+    </script>
+</body>
+</html>

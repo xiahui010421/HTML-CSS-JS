@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // <!-- 基本数据类型 -->
+    //  <!-- Number String Boolean Undefined Null -->
+    // <!-- 引用数据类型 -->
+    // <!-- Object Array Function -->
+    // <!-- 模板字符串使用方法 -->
+    const name = '小明';
+    const age = 18;
+    const str = `我叫${name}，今年${age}岁`;
+    Document.write(str);
+
+    // <!-- 银行卡余额计算 -->
+    let totalAmount = parseFloat(prompt('请输入银行卡余额：'));
+    let electronicPayment = parseFloat(prompt('请输入电子支付金额：'));
+    let waterFee = parseFloat(prompt('请输入水费：'));
+    let internetFee = parseFloat(prompt('请输入宽带费：'));
+
+    let balance = totalAmount - electronicPayment - waterFee - internetFee;
+    if (balance < 0) {
+        alert('余额不足，请充值');
+    } else {
+        alert(`当前余额为：${balance}`);
+    }
+    let table = document.createElement('table');
+    table.border = '1';
+
+    let headerRow = document.createElement('tr');
+    let headers = ['项目', '金额'];
+    let headerCell1 = document.createElement('th');
+       
+    
+
+
+    </script>
+
+</body>
+</html>

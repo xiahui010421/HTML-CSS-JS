@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <p>6</p>
+    </ul>
+    <script>
+        
+        // 给父元素注册事件，当我们触发子元素的时候，会冒泡到父元素身上，从而触发父元素的事件
+        //事件委托的方式---冒泡
+        const ul = document.querySelector('ul')
+        ul.addEventListener('click',function(e){
+            // alert('QWERTYUI')
+            // this.style.color='red'
+            console.dir(e.target)
+            if(e.target.tagName === 'LI'){
+                e.target.style.color= 'red'
+            }
+
+        })
+
+   </script>
+</body>
+</html>

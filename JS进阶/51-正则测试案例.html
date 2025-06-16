@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         span {
+            display: inline-block;
+            width: 250px;
+            height: 30px;
+            vertical-align: middle;
+            line-height: 30px;
+            padding-left: 15px;
+        }
+         .error{
+        color: red;
+        background: url('../images/1.webp') no-repeat left center;
+            background-size: 16px 16px; /* 设置图片为16x16像素 */
+        }
+        .right{
+            color: green;
+            background: url('../images/2.webp') no-repeat left center;
+            background-size: 16px 16px; /* 设置图片为16x16像素 */
+        }
+    </style>
+    
+</head>
+<body>
+    <input type="text" placeholder="请输入6-12位字母或数字" />
+    <span></span>
+    <script>
+        const input = document.querySelector('input')
+
+        input.addEventListener('change', function() {
+            const span = document.querySelector('span');
+            const reg = /^[a-zA-Z0-9]{6,12}$/; // 6-12位字母或数字
+            span.classList.remove('right', 'error');
+            if (reg.test(input.value)) {
+                span.textContent = '输入正确';
+                span.classList.add('right');
+            } else {
+                span.textContent = '输入错误';
+                span.classList.add('error');
+            }
+        });
+    </script>
+</body>
+</html>

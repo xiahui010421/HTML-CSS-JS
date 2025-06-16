@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [2,0,6,11,77,0,52,0,25,7];
+        // console.log(arr);
+        //数组的筛选
+        // let newArr = arr.filter((item) => {
+        //     return item > 10;
+        // });
+
+        
+        //1,声明新的数组
+        let newArr = [];
+        //2,遍历原数组
+        for(let i = 0; i < arr.length; i++){
+            if(arr[i] > 10){
+                //3,判断条件
+                //4,如果满足条件，就把符合条件的元素放入新的数组中
+                newArr.push(arr[i]);
+            }
+        }
+        console.log(newArr);
+
+    </script>
+</body>
+</html>

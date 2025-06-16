@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        const obj = {
+            name: 'xiahui',
+            age: 18,    
+        };
+        //浅拷贝
+        const shallowCopy = Object.assign({}, obj);
+        const o = {...obj}
+        o.age=20
+        shallowCopy.age = 24
+        console.log(shallowCopy); // 输出: { name: 'xiahui', age: 24 }
+        console.log(o); // 输出: { name: 'xiahui', age: 20 }
+        //深拷贝
+        const deepCopy = JSON.parse(JSON.stringify(obj));
+        deepCopy.age = 30;
+        console.log(deepCopy); // 输出: { name: 'xiahui', age: 30}?
+
+        //
+        function getTime(){
+            document.querySelector('div').innerHTML= new Date().toLocaleString()
+            setTimeout(getTime,1000)
+        }
+        getTime()
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //数组是一种数据类型
+        let arr = [1, 2, 'pink', true];
+        // let arr2 = new Array(1, 2, 'pink', true);
+        console.log(arr);
+        //数组的长度  
+        console.log(arr.length);
+        //数组的索引
+        console.log(arr[0]);
+        console.log(arr[1]);
+        console.log(arr[2]);
+
+        //数组的遍历
+        for(let i = 0; i<arr.length;i++){
+            console.log(arr[i]);
+        }
+        //数组的push方法---后面增加，并且返回数组长度
+        arr.push('hello');
+        console.log(arr);
+        //数组的pop方法---删除最后一个元素
+        arr.pop();
+        console.log(arr);
+        //数组的shift方法---删除第一个元素
+        arr.shift();
+        console.log(arr);
+
+        //数组的unshift方法---前面增加，并且返回数组长度
+        arr.unshift('hello');
+        console.log(arr);
+        //数组的slice方法---截取数组
+        //slice(开始位置,结束位置)
+        //slice(0,2)---截取0到2之间的元素，不包括2
+        let arr2 = arr.slice(0, 2);
+        console.log(arr2);      
+        //数组的splice方法---删除数组元素
+        //splice(开始位置,删除个数)
+        //splice(0,1)---删除第一个元素
+        arr.splice(0, 1);
+        console.log(arr);
+        //数组的concat方法---连接数组
+        //concat(连接的数组)
+        //concat(arr2)---连接arr和arr2
+        let arr3 = arr.concat(arr2);
+        console.log(arr3);
+        //数组的join方法---连接数组
+        //join(连接的字符)
+        //join('')---连接arr3的元素
+        let str = arr3.join('');
+        console.log(str);
+        //数组的reverse方法---反转数组
+        //reverse()---反转arr3
+        arr3.reverse();
+        console.log(arr3);
+        //数组的sort方法---排序数组
+        //sort()---排序arr3
+        arr3.sort();
+        console.log(arr3);
+        //数组的indexOf方法---查找元素
+        //indexOf(查找的元素)
+        //indexOf('pink')---查找arr3中第一个元素为pink的索引
+        let index = arr3.indexOf('pink');
+        console.log(index);
+        //数组的lastIndexOf方法---查找元素
+        //lastIndexOf(查找的元素)
+        //lastIndexOf('pink')---查找arr3中最后一个元素为pink的索引
+        let lastIndex = arr3.lastIndexOf('pink');
+        console.log(lastIndex);
+        
+    </script>
+</body>
+</html>

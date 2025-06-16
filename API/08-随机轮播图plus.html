@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式轮播图示例</title>
+    <style>
+        :root {
+            --primary-color: #2196F3;
+            --secondary-color: #4CAF50;
+            --text-color: #333;
+            --text-light: #fff;
+            --background: #f5f5f5;
+            --radius: 8px;
+            --nav-height: 80px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* 导航栏样式 */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 15px 20px;
+            z-index: 1000;
+            height: var(--nav-height);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .hamburger-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .bar {
+            width: 28px;
+            height: 3px;
+            background: var(--text-color);
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: #555;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* 轮播图样式 */
+        .carousel {
+            position: relative;
+            height: 600px;
+            width: 100%;
+            overflow: hidden;
+            padding-top: var(--nav-height);
+        }
+
+        .carousel-slides {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--text-light);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: var(--radius);
+            max-width: 800px;
+            width: 90%;
+        }
+
+        .carousel-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .carousel-description {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .carousel-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius);
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-btn:hover {
+            background-color: #1a73e8;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .indicator.active {
+            background-color: white;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index: 10;
+        }
+
+        .carousel-control:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        /* 内容区样式 */
+        .content {
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .primary-btn {
+            background-color: var(--primary-color);
+            color: white;
+            margin-right: 5px;
+        }
+
+        .primary-btn:hover {
+            background-color: #1a73e8;
+        }
+
+        .secondary-btn {
+            background-color: #f0f0f0;
+            color: var(--text-color);
+        }
+
+        .secondary-btn:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .nav-bar {
+                height: 60px;
+            }
+            
+            .content {
+                padding-top: 60px;
+            }
+            
+            .carousel {
+                height: 400px;
+                padding-top: 60px;
+            }
+            
+            .carousel-title {
+                font-size: 1.8rem;
+            }
+            
+            .carousel-description {
+                font-size: 1rem;
+            }
+            
+            .hamburger-menu {
+                display: flex;
+            }
+
+            .nav-list {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                width: 100%;
+                max-width: 280px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                transition: left 0.3s ease;
+                box-shadow: 0 0 12px rgba(0,0,0,0.1);
+            }
+
+            .nav-list.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 15px 0;
+            }
+
+            .nav-link {
+                font-size: 16px;
+            }
+
+            .hamburger-menu.active .bar:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+
+            .hamburger-menu.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger-menu.active .bar:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="#" class="logo">My Website</a>
+            <div class="hamburger-menu" id="menuBtn">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-list" id="navList">
+                <li class="nav-item"><a href="#" class="nav-link">首页</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">产品</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">服务</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">关于</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 轮播图 -->
+    <div class="carousel" id="carousel">
+        <div class="carousel-slides" id="slides">
+            <!-- 轮播图1 -->
+            <div class="carousel-slide">
+                <img src="https://picsum.photos/1920/1080?random=1" alt="轮播图1">
+                <div class="carousel-content">
+                    <h2 class="carousel-title">探索无限可能</h2>
+                    <p class="carousel-description">我们提供创新的解决方案，帮助您实现业务增长</p>
+                    <a href="#" class="carousel-btn">了解更多</a>
+                </div>
+            </div>
+            
+            <!-- 轮播图2 -->
+            <div class="carousel-slide">
+                <img src="https://picsum.photos/1920/1080?random=2" alt="轮播图2">
+                <div class="carousel-content">
+                    <h2 class="carousel-title">专业团队支持</h2>
+                    <p class="carousel-description">拥有多年行业经验的专家团队，为您提供全方位技术支持</p>
+                    <a href="#" class="carousel-btn">联系我们</a>
+                </div>
+            </div>
+            
+            <!-- 轮播图3 -->
+            <div class="carousel-slide">
+                <img src="https://picsum.photos/1920/1080?random=3" alt="轮播图3">
+                <div class="carousel-content">
+                    <h2 class="carousel-title">品质保证</h2>
+                    <p class="carousel-description">严格的质量控制体系，确保每一个产品都符合高标准</p>
+                    <a href="#" class="carousel-btn">查看产品</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 轮播图控制按钮 -->
+        <div class="carousel-control prev" id="prevBtn">
+            <i>&lt;</i>
+        </div>
+        <div class="carousel-control next" id="nextBtn">
+            <i>&gt;</i>
+        </div>
+        
+        <!-- 轮播图指示器 -->
+        <div class="carousel-indicators" id="indicators">
+            <div class="indicator active" data-index="0"></div>
+            <div class="indicator" data-index="1"></div>
+            <div class="indicator" data-index="2"></div>
+        </div>
+    </div>
+
+    <!-- 内容区 -->
+    <main class="content">
+        <!-- 卡片示例1 -->
+        <div class="card">
+            <div class="card-image">
+                <img src="https://picsum.photos/300/200?random=10" alt="产品图片">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">产品名称</h2>
+                <p>这里是产品描述...</p>
+                <a href="#" class="primary-btn">立即购买</a>
+                <a href="#" class="secondary-btn">了解更多</a>
+            </div>
+        </div>
+
+        <!-- 卡片示例2 -->
+        <div class="card">
+            <div class="card-image">
+                <img src="https://picsum.photos/300/200?random=11" alt="产品图片">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">服务项目</h2>
+                <p>这里是服务描述...</p>
+                <a href="#" class="primary-btn">预约服务</a>
+                <a href="#" class="secondary-btn">查看详情</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 导航菜单交互
+        const menuBtn = document.getElementById('menuBtn');
+        const navList = document.getElementById('navList');
+
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            navList.classList.toggle('active');
+        });
+
+        // 轮播图功能
+        const carousel = document.getElementById('carousel');
+        const slides = document.getElementById('slides');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const indicators = document.getElementById('indicators');
+        const indicatorItems = indicators.querySelectorAll('.indicator');
+        
+        let currentIndex = 0;
+        const slideCount = slides.children.length;
+        let autoplayInterval;
+
+        // 初始化轮播图
+        function initCarousel() {
+            // 设置自动播放
+            startAutoplay();
+            
+            // 绑定控制按钮事件
+            prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+            nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+            
+            // 绑定指示器事件
+            indicatorItems.forEach(indicator => {
+                indicator.addEventListener('click', () => {
+                    const index = parseInt(indicator.dataset.index);
+                    goToSlide(index);
+                });
+            });
+            
+            // 鼠标悬停暂停自动播放
+            carousel.addEventListener('mouseenter', stopAutoplay);
+            carousel.addEventListener('mouseleave', startAutoplay);
+        }
+
+        // 切换到指定幻灯片
+        function goToSlide(index) {
+            // 处理边界情况
+            if (index < 0) index = slideCount - 1;
+            if (index >= slideCount) index = 0;
+            
+            // 更新当前索引
+            currentIndex = index;
+            
+            // 移动幻灯片
+            const slideWidth = carousel.clientWidth;
+            slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            
+            // 更新指示器状态
+            updateIndicators();
+        }
+
+        // 更新指示器状态
+        function updateIndicators() {
+            indicatorItems.forEach((indicator, index) => {
+                if (index === currentIndex) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+
+        // 开始自动播放
+        function startAutoplay() {
+            autoplayInterval = setInterval(() => {
+                goToSlide(currentIndex + 1);
+            }, 5000); // 每5秒切换一次
+        }
+
+        // 停止自动播放
+        function stopAutoplay() {
+            clearInterval(autoplayInterval);
+        }
+
+        // 响应式调整
+        function handleResize() {
+            // 重新计算幻灯片位置
+            goToSlide(currentIndex);
+        }
+
+        // 初始化
+        window.addEventListener('load', initCarousel);
+        window.addEventListener('resize', handleResize);
+    </script>
+</body>
+</html>

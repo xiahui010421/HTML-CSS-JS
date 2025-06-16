@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //冒泡排序
+        let arr = [5, 4, 3, 2, 1];
+        for( let i =0;i<arr.length;i++){
+            for(let j = 0;j<arr.length-i-1;j++){
+              if(arr[j]>arr[j+1]){
+                let temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+              }
+            }
+        }
+        console.log(arr);
+       
+        //升序排序
+        let arr1 = [5, 4, 3, 2, 1];
+        arr1.sort((a, b) => a - b);
+        console.log(arr1);
+        // arr1.sort(function( a, b) {
+        //     return a - b;
+        // });
+        //降序排序
+        let arr2 = [5, 4, 3, 2, 1];
+        arr2.sort((a, b) => b - a);
+        console.log(arr2);
+    </script>
+</body>
+</html>

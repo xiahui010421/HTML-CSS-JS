@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj={
+            name: '张三',
+            age: 18,
+            hobbies: ['reading', 'gaming', 'coding']
+        }
+
+        localStorage.setItem('obj',JSON.stringify(obj));
+        //{"name":"张三","age":18,"hobbies":["reading","gaming","coding"]}
+        //JSON字符串，双引号
+        console.log(localStorage.getItem('obj'))
+        const str = localStorage.getItem('obj')
+        console.log(JSON.parse(str)); // 将JSON字符串转换为对象
+        // { name: '张三', age: 18, hobbies: [ 'reading', 'gaming', 'coding' ] }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //增删改查
+        let obj = {
+            'name': '张三',
+            age: 18,
+            isStudent: true,
+            hobbies: ['reading', 'sports'],
+            address: {
+                city: 'Beijing',
+                street: 'Wangfujing'
+            },
+            greet: function() {
+                return 'Hello, my name is ' + this.name;
+            }
+        }
+        obj.name = '李四' //修改
+        console.log(obj.name); // '李四'
+        console.log(obj['name']); // '李四'
+
+        //添加
+        obj.hobbies.push('music')
+        //删除
+        delete obj.age
+        console.log(obj); 
+        //遍历
+        for (let key in obj) {
+            console.log(key + ': ' + obj[key]);
+        }
+
+        let obj2={
+            name: "xiahui",
+            age: 18,
+            isStudent: true,
+            hobbies: ['barbecue', 'sports'],
+            address: {
+                city: 'Wuhan',
+                street: 'wit'
+            }
+        }
+        for(let key in obj2){
+            console.log(key +':'+obj2[key]);
+        }
+
+        // //判断属性是否存在
+        // console.log('name' in obj); // true
+        // console.log('age' in obj); // false
+        // //Object.keys()方法
+        // let keys = Object.keys(obj)
+        // console.log(keys); // ['name', 'isStudent', 'hobbies', 'address', 'greet']
+        // //Object.values()方法
+        // let values = Object.values(obj) 
+        // console.log(values); 
+
+
+    </script>
+</body>
+</html>

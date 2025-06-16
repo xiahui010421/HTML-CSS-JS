@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <input type="text" value="computer" id="">
+     <input type="checkbox" name="" id="">
+     <button >click</button>
+    <script>
+        // //获取元素
+        const uname = document.querySelector('input[type="text"]');
+        // console.log(uname) 
+        // //获取值
+        // const value = uname.value
+        // console.log(value) 
+        // //设置值
+        // uname.value='我要买电脑'
+        // //设置类型
+        // uname.type='password' 
+
+
+        //表单属性
+        const input = document.querySelector('input[type="checkbox"]');
+        input.checked = true; // 设置复选框为选中状态
+        // input.checked = 'true'; // 也可以这样设置
+        console.log(input.checked); //获取选中状态
+
+        const button = document.querySelector('button');
+        button.disabled = true; // 设置按钮为禁用状态
+        console.log(button.disabled); //获取按钮的禁用状态
+        
+
+    </script>
+</body>
+</html>

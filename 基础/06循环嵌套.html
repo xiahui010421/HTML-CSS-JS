@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+        span{
+            padding: 5px 10px;
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+            border:  1px solid #dea0a0;
+            margin: 1px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(133, 187, 110, 0.5);
+            background-color: #f5ebeb;
+        }   
+    </style>
+</head>
+<body>
+    <script>
+        // for(let i = 0; i < 5; i++) {
+        //     for(let j = 0; j < i; j++) {
+        //         document.write(`👍`);
+        //     }
+        //     document.write('<br>');
+        // }
+
+        // 9*9
+        for(let i = 1; i <= 9; i++) {
+            for(let j = 1; j <= i; j++) {
+                document.write(`<span>${i} * ${j} = ${i * j} </span>`);
+            }
+            document.write('<br>');
+        }
+    </script>
+</body>
+</html>

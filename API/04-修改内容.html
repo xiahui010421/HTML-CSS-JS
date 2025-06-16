@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">content</div>
+    <script>
+        const obj ={
+            name:'zhangsan',
+            age:18,
+        }
+        const box = document.querySelector('.box');
+
+        console.log(box.innerText);
+        // console.log(box.innerHTML);
+        // console.log(obj.name)
+        // obj.name = 'lisi';
+        // console.log(obj.name)
+        box.innerText = 'hello world';//纯文本，不解析
+        console.log(box.innerText);
+        box.innerHTML = '<h1>hello world</h1>';//解析标签
+        console.log(box.innerText);
+        console.log(box.innerHTML);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            color: #333;
+            font-size: 24px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            /* 合并相邻边框 */
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>订单确认</h2>
+    <!-- <table>
+        <tr>
+            <th>商品名称</th>
+            <th>商品价格</th>
+            <th>商品数量</th>
+            <th>总价</th>
+            <th>收获地址</th>
+        </tr>
+        <tr>
+            <td>商品1</td>
+            <td>price</td>
+            <td>num</td>
+            <td>sum</td>
+            <td>地址1</td>
+        </tr>
+    </table> -->
+    <script>
+        //用户输入
+        let price = prompt("请输入商品价格：");
+        let num = prompt("请输入商品数量：");
+        let address = prompt("请输入收货地址：");
+        //计算总额
+        let sum = price * num;
+
+        document.write(`
+            <table>
+                <tr>
+                    <th>商品名称</th>
+                    <th>商品价格</th>
+                    <th>商品数量</th>
+                    <th>总价</th>
+                    <th>收获地址</th>
+                </tr>
+                <tr>
+                    <td>商品1</td>
+                    <td>${price}</td>
+                    <td>${num}</td>
+                    <td>${sum}</td>
+                    <td>${address}</td>
+                </tr>
+            </table>
+        `)
+        //获取表格元素
+        // let table = document.querySelector("table");
+        //获取表格的第一行
+        // let firstRow = table.rows[1];
+        //设置表格的单元格内容
+        // firstRow.cells[1].innerHTML = price;
+        // firstRow.cells[2].innerHTML = num;
+        // firstRow.cells[3].innerHTML = sum;
+        // firstRow.cells[4].innerHTML = address;
+        //打印页面
+        // window.print();
+        //打印完成后，关闭打印窗口
+        // window.onafterprint = function() {
+        //     window.close();
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1,等待加载，然后执行回掉函数
+        // window.addEventListener('load',function(){
+        //     const btn = document.querySelector('button')
+        //     btn.addEventListener('click' , function(){
+        //         alert(11)
+        //     })
+        // })
+        // img.addEventListener('load',function(){
+
+        // })
+        //2,DOM contentLoaded
+        // document.addEventListener('DOMContentLoaded',function(){
+        //    const btn = document.querySelector('button')
+        //     btn.addEventListener('click' , function(){
+        //         alert(11)
+        //     }) 
+        // })
+    </script>
+    <style>
+        body{
+             height: 3000px;
+        }
+        div{
+            overflow: scroll;
+            width: 200px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde doloremque dicta atque rerum voluptas velit nam magnam. Iure quaerat perspiciatis nostrum, inventore quo nisi animi voluptatem vitae distinctio autem culpa?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde doloremque dicta atque rerum voluptas velit nam magnam. Iure quaerat perspiciatis nostrum, inventore quo nisi animi voluptatem vitae distinctio autem culpa?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde doloremque dicta atque rerum voluptas velit nam magnam. Iure quaerat perspiciatis nostrum, inventore quo nisi animi voluptatem vitae distinctio autem culpa?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde doloremque dicta atque rerum voluptas velit nam magnam. Iure quaerat perspiciatis nostrum, inventore quo nisi animi voluptatem vitae distinctio autem culpa?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde doloremque dicta atque rerum voluptas velit nam magnam. Iure quaerat perspiciatis nostrum, inventore quo nisi animi voluptatem vitae distinctio autem culpa?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde doloremque dicta atque rerum voluptas velit nam magnam. Iure quaerat perspiciatis nostrum, inventore quo nisi animi voluptatem vitae distinctio autem culpa?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde doloremque dicta atque rerum voluptas velit nam magnam. Iure quaerat perspiciatis nostrum, inventore quo nisi animi voluptatem vitae distinctio autem culpa?
+    </div>
+    <button>click</button>
+    <script>
+        const div = document.querySelector('div')
+        div.addEventListener('scroll',function(){
+            console.log(div.scrollTop)
+        })
+        // window.addEventListener('scroll',function(){
+        //     console.log('gun')
+        // })
+    </script>
+</body>
+</html>

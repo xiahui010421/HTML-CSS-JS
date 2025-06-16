@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //实例化一个数组
+        const arr = new Array(1,2,3,4,5,6,7,8,9,10);
+        //自定义一个数组扩展函数
+        Array.prototype.max = function() {
+            return Math.max(...this);
+        }
+        Array.prototype.min = function() {
+            return Math.min(...this);
+        }
+        Array.prototype.sum = function(){
+            return this.reduce((prev,item)=> prev+item,0)
+        }
+        console.log(arr.max());
+        console.log([3,5,8,20,2].max())
+        console.log(arr.min());
+        console.log([3,5,8,20,2].min())
+        console.log(arr.sum());
+
+
+
+        //constructor函数
+        function Star()  {
+        }
+        Star.prototype = {
+            constructor: Star,
+            sing:function(){console.log('唱歌')},
+            dance:function(){console.log('跳舞')},
+            act:function(){console.log('演戏')},
+        }
+        const star1 = new Star();
+        star1.sing(); // 输出: 唱歌
+        star1.dance(); // 输出: 跳舞
+        star1.act(); // 输出: 演戏
+
+        //__proto__
+        console.log(star1.__proto__ === Star.prototype); // 输出: true
+        console.log(Star.prototype.__proto__ === Object.prototype); // 输出: true
+        console.log(Object.prototype.__proto__ === null); // 输出: true
+
+        //
+    </script>
+</body>
+</html>

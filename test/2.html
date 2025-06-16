@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        
+        <script>
+            const _flatten = arr => {
+                // 补全代码
+                let result = [];
+                arr.forEach(item => {
+                    if(Array.isArray(item)){
+                        result = result.concat(_flatten(item));
+                    } else {
+                        result.push(item);
+                    }
+                });
+                return result;
+
+                //数组解构
+                // return arr.reduce((acc, item) => {
+                //     if (Array.isArray(item)) {
+                //         acc.push(..._flatten(item)); // 递归调用
+                //     } else {
+                //         acc.push(item); // 非数组元素直接添加
+                //     }
+                //     return acc; // 返回累积结果
+                // }, []);
+                
+            }
+            
+            // const input = [1,[2,[3,[4]]]]
+            // const output = _flatten(input);
+            console.log(_flatten([1, [2, [3, [4]]]])); // [1, 2, 3, 4]
+
+        </script>
+    </body>
+</html>

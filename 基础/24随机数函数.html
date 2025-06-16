@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24随机数函数</title>
+</head>
+<body>
+    <script>
+        console.log(Math.random());//[0,1)]
+        console.log(Math.floor(Math.random()*(10+1))); //[0,10]整数
+
+        let arr= ['red','green','blue','yellow','pink','purple'];
+        let randomIndex = Math.floor(Math.random()*arr.length);//因为数组从0开始，所以要乘以arr.length
+        console.log(arr[randomIndex]);//随机颜色
+
+        function getRandomNumber(N, M) {
+            return Math.floor(Math.random()*(M-N+1))+N;
+        }
+        console.log(getRandomNumber(5, 10));
+
+        // let arr2=['张飞','关羽','刘备','曹操','孙权','诸葛亮','司马懿','周瑜','黄承儿'];
+        // let len = arr2.length;
+        // for(let i = 0;i<len;i++){
+        //     let randomIndex2 = Math.floor(Math.random()*arr2.length);
+        //     console.log(arr2[randomIndex2]);//随机人物
+        //     arr2.splice(randomIndex2,1);//删除数组中的元素
+        //     console.log(arr2);//删除后的数组
+        // }
+        
+        let arr2 = ['张飞', '关羽', '刘备', '曹操', '孙权', '诸葛亮', '司马懿', '周瑜', '黄承儿'];
+        let usedIndexes = new Set(); // 用于记录已删除的索引
+        for (let i = 0; i < arr2.length; i++) {
+            let randomIndex2;
+            // 找到一个未使用的随机索引
+            do {
+                randomIndex2 = Math.floor(Math.random() * arr2.length);
+            } while (usedIndexes.has(randomIndex2));
+            usedIndexes.add(randomIndex2); // 记录已使用的索引
+            console.log(arr2[randomIndex2]); // 随机人物
+            // 模拟删除后的数组
+            let remaining = arr2.filter((_, index) => !usedIndexes.has(index));
+            console.log(remaining); // 打印删除后的数组
+        }
+        console.log(arr2);
+
+
+        //猜数字游戏
+        // while (guess != randomNumber) {
+        //     attempts++;
+           
+        //     if(attempts > 3){
+        //         alert("你已经猜了3次，游戏结束！");
+        //         break;
+        //     }else{
+        //         if (guess < randomNumber) {
+        //         guess = prompt("猜小了，再试一次");
+        //     } else if (guess > randomNumber) {
+        //         guess = prompt("猜大了，再试一次");
+        //     }
+        //     }
+        // }
+        
+        //生成随机颜色，接收一个boolean值，表示rgb还是十六进制
+        //如果是ture或者无参，十六进制
+        //如果是false，rgb
+        function getRandomColor(flag){
+            let color = ''
+            if(flag == undefined || flag == true){
+                //十六进制
+                let str = '#'
+                let arr = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
+                for(let i=0;i<6;i++){
+                    str += arr[Math.floor(Math.random()*arr.length)];
+                }
+                color = str;
+            }
+            else if(flag == false){
+                //rgb
+                let r = Math.floor(Math.random()*256);
+                let g = Math.floor(Math.random()*256);
+                let b = Math.floor(Math.random()*256);
+                color = 'rgb('+r+','+g+','+b+')';
+            }
+            return color;
+        }
+        console.log(getRandomColor(false));//rgb
+        console.log(getRandomColor(true));//十六进制
+    </script>
+</body>
+</html>

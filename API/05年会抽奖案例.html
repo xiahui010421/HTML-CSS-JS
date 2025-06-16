@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            width: 840px;
+            height: 420px;
+            background: url(../1.jpg) no-repeat center / cover;
+            padding: 100px 50px;
+            box-sizing: border-box;
+            /*居中*/
+            position: absolute;
+            top: 50%;/*将元素的左上角定位到其父容器的 水平 50% 和垂直 50% 的位置。*/
+            left: 50%;
+            transform: translate(-50%, -50%);/*使用 transform 属性将元素的 自身中心点 移动到父容器的中心。*/
+            display: flex; /* 使用 Flexbox 布局 */
+            flex-direction: column; /* 子元素垂直排列 */
+            justify-content: center; /* 垂直居中 */
+            align-items: center; /* 水平居中 */
+            color: #fff; /* 设置文字颜色 */
+            text-align: center; /* 水平居中对齐文本 */
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <strong>教育年会抽奖</strong>
+        <h1>一等奖:<span id="one">???</span></h1>
+        <h1>二等奖:<span id="two">???</span></h1>
+        <h1>三等奖:<span id="three">???</span></h1>
+    </div>
+    <script>
+        const personARR = [
+            '张三',
+            '李四',
+            '王五',
+            '赵六',
+            '钱七',
+            '孙八',
+            '周九',
+            '吴十',
+            '郑十一',
+            '冯十二'
+        ];
+        //随机生成一个一等奖
+        random1 = Math.floor(Math.random()*personARR.length)
+        const one = personARR[random1]  
+        personARR.splice(random1, 1)// 删除已抽中的一等奖，确保不重复抽中
+        //随机生成一个二等奖
+        random2 = Math.floor(Math.random()*personARR.length)
+        const two = personARR[random2]
+        personARR.splice(random2, 1)// 删除已抽中的二等奖，确保不重复抽中
+        //随机生成一个三等奖
+        random3 = Math.floor(Math.random()*personARR.length)
+        const three = personARR[random3]
+        personARR.splice(random3, 1)// 删除已抽中的三等奖，确保不重复抽中
+       
+        //将结果显示在页面上
+        document.getElementById('one').innerText = one;
+        document.getElementById('two').innerText = two;
+        document.getElementById('three').innerText = three;
+    </script>
+</body>
+</html>
