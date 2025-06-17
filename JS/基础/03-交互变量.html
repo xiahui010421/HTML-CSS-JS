@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>03-交互变量</title>
+</head>
+<body>
+    <script>
+        // 交换俩个变量的值
+        // 1. 使用临时变量
+        var a = 10;
+        var b = 20;
+        var temp; // 声明临时变量
+        temp = a; // 将 a 的值赋给临时变量
+        a = b; // 将 b 的值赋给 a
+        b = temp; // 将临时变量的值赋给 b
+        document.write("使用临时变量交换后的值：<br>");
+        document.write("a = " + a + "<br>"); // 输出 a 的值
+        document.write("b = " + b + "<br>"); // 输出 b 的值
+        document.write("<br>");
+        // 2. 使用加法和减法
+        a = 10; // 重新赋值
+        b = 20; // 重新赋值
+        a = a + b; // 将 a 和 b 的和赋给 a
+        b = a - b; // 将 a 的值减去 b 的值赋给 b
+        a = a - b; // 将 a 的值减去 b 的值赋给 a
+        document.write("使用加法和减法交换后的值：<br>");
+        document.write("a = " + a + "<br>"); // 输出 a 的值
+        document.write("b = " + b + "<br>"); // 输出 b 的值
+        document.write("<br>");
+        // 3. 使用异或运算符
+        a = 10; // 重新赋值
+        b = 20; // 重新赋值
+        a = a ^ b; // 将 a 和 b 的异或赋给 a
+        b = a ^ b; // 将 a 的值异或 b 的值赋给 b
+        a = a ^ b; // 将 a 的值异或 b 的值赋给 a
+        document.write("使用异或运算符交换后的值：<br>");
+        document.write("a = " + a + "<br>"); // 输出 a 的值
+        document.write("b = " + b + "<br>"); // 输出 b 的值
+        document.write("<br>");
+        // 4. 使用数组解构赋值
+        a = 10; // 重新赋值
+        b = 20; // 重新赋值
+        [a, b] = [b, a]; // 使用数组解构赋值交换 a 和 b 的值
+        document.write("使用数组解构赋值交换后的值：<br>");
+        document.write("a = " + a + "<br>"); // 输出 a 的值
+        document.write("b = " + b + "<br>"); // 输出 b 的值
+        document.write("<br>");
+        // 5. 使用 ES6 的解构赋值
+        a = 10; // 重新赋值
+        b = 20; // 重新赋值
+        [a, b] = [b, a]; // 使用 ES6 的解构赋值交换 a 和 b 的值
+        document.write("使用 ES6 的解构赋值交换后的值：<br>");
+        document.write("a = " + a + "<br>"); // 输出 a 的值
+        document.write("b = " + b + "<br>"); // 输出 b 的值
+        document.write("<br>");
+        // 6. 使用乘法和除法
+        a = 10; // 重新赋值
+        b = 20; // 重新赋值
+        a = a * b; // 将 a 和 b 的积赋给 a
+        b = a / b; // 将 a 的值除以 b 的值赋给 b
+        a = a / b; // 将 a 的值除以 b 的值赋给 a
+        document.write("使用乘法和除法交换后的值：<br>");
+        document.write("a = " + a + "<br>"); // 输出 a 的值
+        document.write("b = " + b + "<br>"); // 输出 b 的值
+        document.write("<br>");
+        // 7. 使用字符串拼接
+        a = "Hello"; // 重新赋值
+        b = "World"; // 重新赋值
+        a = a + b; // 将 a 和 b 的拼接赋给 a
+        b = a.substring(0, a.length - b.length); // 将 a 的值减去 b 的长度赋给 b
+        a = a.substring(b.length); // 将 a 的值减去 b 的长度赋给 a
+        document.write("使用字符串拼接交换后的值：<br>");       
+        document.write("a = " + a + "<br>"); // 输出 a 的值
+        document.write("b = " + b + "<br>"); // 输出 b 的值
+        document.write("<br>");
+        // 8. 使用对象属性交换
+        var obj = { x: 10, y: 20 }; // 声明对象
+        var tempObj = obj.x; // 声明临时对象
+        obj.x = obj.y; // 将对象的 y 属性赋给 x 属性
+        obj.y = tempObj; // 将临时对象的值赋给 y 属性
+        document.write("使用对象属性交换后的值：<br>");
+        document.write("x = " + obj.x + "<br>"); // 输出对象的 x 属性值
+        document.write("y = " + obj.y + "<br>"); // 输出对象的 y 属性值
+        document.write("<br>");
+    </script>
+</body>
+</html>
