@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>05-resize</title>
+    <style>
+        .box1{
+            width: 800px;
+            height: 100px;
+            background-color: red;
+        }
+        .box2{
+            width: 400px;
+            height: 400px;
+            background-color: blue;
+            resize: horizontal; /* 只能水平缩放 */
+            overflow: hidden; /* 超出部分显示滚动条 */
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            resize: vertical; /* 只能垂直缩放 */
+            overflow: auto; /* 超出部分显示滚动条 */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box2">
+        <div class="box1"></div>
+    </div> 
+  
+    <div class="box3"></div>
+</body>
+</html>

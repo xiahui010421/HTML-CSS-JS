@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>01-空间与景深</title>
+    <style>
+        .outer {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;   
+            margin: 0 auto;
+            margin-top: 100px;    
+        }
+        .inner {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(124, 178, 124);
+            /* 旋转45度 */
+            /* transform: rotate(45deg);  */
+            /* 设置变换原点为左上角 */
+            /* transform-origin: 0 140px;  */
+            transform-origin : 50px;
+            
+        }
+    </style>
+</head>
+<body>
+     <div class="outer">
+        <div class="inner">hello</div>
+     </div>
+</body>
+</html>

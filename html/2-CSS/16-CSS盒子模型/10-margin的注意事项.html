@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+       
+        .outside{
+            width: 400px;
+            height: 400px;
+            padding: 50px;
+            /* 预留一圈的padding */
+            background-color: blueviolet;
+        }
+        /* 子元素的margin从父亲的content区算 */
+
+        .inner{
+            width: 200px;
+            height: 200px;
+            padding: 30px;
+            margin: 50px;
+            background-color: rgb(161, 98, 220); 
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+        }
+        .box1{
+            background-color: skyblue;
+            margin-bottom: 50px;
+        }
+        .box2{
+            margin-top: 50px;
+            background-color: gray;
+
+        }
+        .box3{
+            background-color: #d39797;
+        }
+         
+    </style>
+</head>
+<body>
+    <div class="outside">
+        <div class="inner"></div> 
+        <!-- 子的margin是参考父元素的content -->
+    </div>
+
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+
+    
+    <div id="d1">块级元素</div>
+    <img src="/images/1.png" alt="1"><img src="/images/1.png" alt="1"><img src="/images/1.png" alt="1">
+</body>
+</html>

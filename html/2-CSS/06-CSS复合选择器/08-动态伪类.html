@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类选择器-概念</title>
+    <style>
+        /* 很像类，是元素特殊状态的一种描述 */
+        /* 访问过的 */
+        a:link{
+            color: aqua;
+        }
+        /* 没访问的 */
+        a:visited{
+            color: gray;
+        }
+        /* 悬浮 */
+        a:hover{
+            color: aqua;
+        }
+        /* 激活 */
+        a:active{
+            color: green;
+        }
+        span:hover{
+            color: yellowgreen;
+        }
+        span:active{
+            color: yellow;
+        }
+        /* 输入的才能用focus 表单类元素 */
+        input:focus,select:focus{
+            color: aliceblue;
+            background-color: rgb(6, 40, 40);
+        }
+       
+    </style>
+</head>
+<body>
+    <!-- 访问过的变色 -->
+
+    <a href="https://www.baidu.com">去百度</a>
+    <a href="https://www.jd.com">去京东</a>
+    <span>shangguigu</span>
+    <br>
+    <input type="text">
+    <br>
+    <input type="text">
+    <br>
+    <input type="text">
+    <select>
+        <option value="beijing">beijing</option>
+        <option value="shanghai">shanghai</option>
+    </select>
+</body>
+</html>

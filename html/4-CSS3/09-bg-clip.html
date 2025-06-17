@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>09-bg-clip</title>
+    <style>
+        .box1{
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            font-size: 100px;
+            font-weight: bold;
+            color: transparent;
+            background-color: rgb(131, 157, 167);
+            padding: 50px;
+            border: 50px dashed red;
+            background-image: url(../资料/图片/bg02.jpg);
+            /* background-image: url(../images/9.png); */
+            background-repeat: no-repeat;
+            /* 背景图片不重复 */
+             /* background-clip: content-box;  */
+            /* 以内容区域为原点  */
+            background-origin: border-box; 
+            /* 让背景图片适应边框区域 */
+            /* background-clip: padding-box;  */
+            /* 让背景图片适应内边距区域 */
+            /* background-size: cover;  */
+            /* 背景图片覆盖整个区域 */
+            -webkit-background-clip: text;
+        } 
+    </style>
+</head>
+<body>
+    <div class="box1">hello</div>
+</body>
+</html>

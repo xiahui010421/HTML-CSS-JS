@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>表单基本结构</title>
+</head>
+<body>
+    <!-- 手机用户数据 -->
+    <!-- /s直接给结果 -->
+    <form action="https://www.baidu.com/s">
+        <input type="text" name="wd">
+        <!-- https://www.baidu.com/s?wd=%E5%A6%82%E4%BD%95%E4%B8%80%E5%A4%9C%E6%9A%B4%E5%AF%8C -->
+        <button>搜索</button>
+    </form>
+    <hr>
+    <form action="https:/search.jd.com/search">
+        <input type="text" name="keyword" target="_self" method="get">
+        <!-- 本页面打开 -->
+        <button>搜索</button>
+    </form>
+    <hr>
+    <!-- 跳转 -->
+    <a href="https:/search.jd.com/search?keyword=手机">搜索手机</a>
+
+</body>
+</html>

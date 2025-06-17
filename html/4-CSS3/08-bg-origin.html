@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>08-bgc-origin</title>
+    <style>
+        .box1{
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            font-size: 40px;
+            background-color: skyblue;
+            padding: 50px;
+            border: 50px dashed red;
+            /* 默认padding左上角为原点 */
+            background-image: url(../资料/图片/bg01.jpg);
+            background-repeat: no-repeat;
+            background-origin: content-box; /* 以内容区域为原点 */
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">hello</div>
+</body>
+</html>

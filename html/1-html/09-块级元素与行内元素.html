@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>块级元素与行内元素</title>
+</head>
+<body>
+    <!-- 块级元素-独占一行 -->
+    <marquee>xiahui</marquee>
+    <h1>xiahui</h1>
+    <h2>xiahui</h2>
+    <p>xiahui</p>
+    <div>xiahui</div>
+    <!-- 行内元素 -->
+    <input type="text">
+    <input type="password"
+    <span>xiahui</span>
+    <!-- 块级元素中可以写行内元素，块级元素（h1-h6不能互相嵌套；p不能写块元素）-->
+    <div>
+        <p>hhhh</p>
+        <input type="text">
+    </div>
+    <!-- 行内元素可以写行内元素，但是不能写块级元素,不然css会乱，把下面并列的span搞一起 -->
+    <span>
+        <span>xiahui1</span>
+        <input type="text">
+        <span>xiahui2</span>
+    </span>
+    <span>
+        hhhh
+    </span>
+</body>
+</html>

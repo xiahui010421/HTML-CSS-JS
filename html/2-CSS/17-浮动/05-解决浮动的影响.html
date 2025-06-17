@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>05-解决浮动的影响</title>
+    <style>
+        .outer {
+            width: 500px;
+
+            /* 第一种解决方案 */
+            /* height: 122px; */
+            background-color: gray;
+            border: 1px solid black;
+
+            /* 第二种解决方案
+            float: left; */
+
+            /* 第三种解决方案 */
+            /* overflow: hidden; */
+
+
+
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            border: 1px solid black;
+            margin: 10px;
+
+        }
+
+        .box1,
+        .box2,
+        .box3 {
+            float: left;
+        }
+
+        /* 第四种 */
+        /* .box4 { */
+            /* display: inline-block; */
+            /* 好人才作数 ，得自己不飘*/
+            /* clear: both; */
+        /* } */
+
+        /* 第四种 */
+        .mofa {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="mofa"></div>
+    </div>
+    <div style="background-color: orange;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quo ipsum
+        laboriosam. Dolore ut autem quod doloribus, saepe aspernatur eos delectus, possimus at dolor, alias dolores ipsa
+        doloremque quam debitis voluptas tenetur magnam aliquam expedita. Nulla aperiam dolores consectetur ipsam atque
+        voluptate cumque libero nesciunt. Libero ab vero blanditiis odio molestias excepturi optio veniam, sequi ut
+        commodi quos. Nobis, id enim! Eos dolorum ad magni voluptatum animi labore inventore amet laborum molestiae
+        laboriosam dolorem quibusdam nostrum nulla sunt deserunt molestias expedita minus quod reiciendis, nobis
+        commodi. Cumque, optio numquam perferendis, sunt facilis dolorem exercitationem tempora accusamus cupiditate
+        doloremque assumenda provident!</div>
+</body>
+
+</html>

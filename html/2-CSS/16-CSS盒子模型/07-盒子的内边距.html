@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #d1{
+            width: 400px;
+            height: 400px;
+            font-size: 40px;
+            /* padding-left: 20px;
+            padding-top: 0px;
+            padding-right: 20px;
+            padding-bottom: 20px; */
+
+            /* 复合属性 */
+            /* 俩个的话是上下左右 */
+            /* 四个就是四边 -上 右 下 左*/
+            /* 三个就是上 ，左右 ，下 */
+            padding: 20px 0px 30px 40px;
+
+            background-color: skyblue;
+        }
+        span{
+            background-color: orange;
+            font-size: 20px;
+            /* 行内元素的上下是有问题的--- */
+            padding: 20px 20px;
+
+        }        
+    </style>
+</head>
+<body>
+    <div id="d1">hello1</div>
+    <hr>
+    <!-- 行内注意上下 -->
+    <span>哈哈哈哈</span>
+    <div>haohaoxuexi </div>
+    <!-- 不会遮挡 -->
+    <img src="../images/4.png" alt=aaaa">
+</body>
+</html>

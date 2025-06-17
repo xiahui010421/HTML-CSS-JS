@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>粘性定位</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            /* 为了能够全部推上去 */
+            height: 2000px;
+        }
+        .content{
+            height: 200px;
+            /* 开启之后 ，粘性定位在这里生效 */
+            overflow: scroll;
+        }
+        .page-header{
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background-color: orange;
+            font-size: 20px;
+        }
+        .item{
+            background-color: #888;
+        }
+        .first,.second,.third{
+            background-color: rgb(101, 186, 220);
+            font-size: 40px;
+            position: sticky;
+            /* 参考点----离他最近的拥有滚动的祖先元素 */
+            top: 0px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+    <div class="page-header">头部</div>
+    <!-- 内容区  -->
+     <div class="content">
+        <!-- 每一项 -->
+        <div class="item item1">
+            <div class="first">A</div>
+            <h2>A1</h2>
+            <h2>A2</h2>
+            <h2>A3</h2>
+            <h2>A4</h2>
+            <h2>A5</h2>
+            <h2>A6</h2>
+            <h2>A7</h2>
+            <h2>A8</h2>
+        </div>
+        <!-- 每一项 -->
+        <div class="item item2">
+            <div class="second">B</div>
+            <h2>B1</h2>
+            <h2>B2</h2>
+            <h2>B3</h2>
+            <h2>B4</h2>
+            <h2>B5</h2>
+            <h2>B6</h2>
+            <h2>B7</h2>
+            <h2>B8</h2>
+        </div>
+        <!-- 每一项 -->
+        <div class="item item3">
+            <div class="third">C</div>
+            <h2>C1</h2>
+            <h2>C2</h2>
+            <h2>C3</h2>
+            <h2>C4</h2>
+            <h2>C5</h2>
+            <h2>C6</h2>
+            <h2>C7</h2>
+            <h2>C8</h2>
+        </div>
+     </div>
+
+</body>
+</html>

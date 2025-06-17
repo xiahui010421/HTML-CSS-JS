@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+    <style>
+
+        /* [title]{
+            color: red;
+        } */
+
+        /* [title=guigu3]{
+            color: red;
+        } */
+
+        /* 以g开头 */
+        /* [title^=g]{
+            color: red;
+        }  */
+
+        /* 以什么结尾 */
+        /* [title$=u]{
+            color: red;
+        } */
+        
+        /* 只要有这个就行 */
+        [title*="u"]{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div title="atguigu2">尚硅谷1</div>
+    <div title="atguigu2">尚硅谷2</div>
+    <div title="guigu3">尚硅谷3</div>
+    <div title="guigu">尚硅谷4</div>
+
+</body>
+</html>

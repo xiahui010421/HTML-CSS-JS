@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>07-boxopacity</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            margin: 0 auto; 
+            font-size: 40px;
+            font-weight: bold;
+            background-color: rgb(213, 132, 132);
+            text-align: center;
+            line-height: 200px;
+            color: #fff;
+            opacity: 0.5; /* 透明度 */
+        }
+        .box2{
+            margin-top: 20px;
+            width: 400px;    
+            height: 400px;
+            text-align: center; /* 水平居中 */
+            position: relative; /* 确保布局正常 */
+        }
+
+        .box2 img {
+            display: block; /* 将 img 变为块级元素 */
+            margin: 0 auto; /* 水平居中 */
+            max-width: 100%; /* 确保图片不会超出父容器 */
+            height: auto; /* 保持图片比例 */
+        }
+        .box2 h1{
+            position: absolute; /* 绝对定位 */
+            top: 0;
+            left: 0;
+            line-height: 100px;
+            text-align: center;           
+            font-size: 40px;
+            font-weight: bold;
+            width: 100%;
+            
+            background-color: #000000;
+            color: #ffffff;
+            opacity: 0.5; /* 透明度 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">hello</div>
+    <div class="box2">
+        <img src="../2-CSS/images/1.png" alt="">
+        <h1>hello</h1>
+    </div>
+</body>
+</html>

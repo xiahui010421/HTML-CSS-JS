@@ -1,0 +1,16 @@
+/* 触发浏览器缓存机制 */
+h1{
+    color: brown;
+    font-size: 50px;
+}
+h2{
+    color: blueviolet;
+    font-size: 40px;
+}
+img{
+    width: 200px;
+}
+p{
+    color: chartreuse;
+    font-size:medium;
+}

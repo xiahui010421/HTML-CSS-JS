@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>否定伪类</title>
+    <style>
+        /* 排除类名为fail */
+        /* div>p:not(.fail){
+            color: red;
+        } */
+        
+        /* div>p:not([title^="你要加油啊"]){
+            color: red;
+        } */
+        /* 排除满足括号中的元素 */
+        div>p:not(:first-child){
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>张三：90</p>
+        <p>李四：80</p>
+        <p>王五：70</p>
+        <p>赵六：68</p>
+        <p class="fail" title="你要加油啊！孙七">孙七：50</p>
+        <p class="fail" title="你要加油啊！老八">老八：48</p>
+    </div>
+</body>
+</html>

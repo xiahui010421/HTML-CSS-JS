@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>超链接跳转锚点</title>
+</head>
+<body>
+    <a href="#小蜗">看小蜗</a>
+    <a href="#蟹老板">看蟹老板</a>
+    <a href="#章鱼哥">看章鱼哥</a>
+    <a href="#蟹黄堡">看蟹黄堡</a>
+    <!-- 不能重复 name写在a标签上才能叫做锚点不能写p标签 -->
+    <a name="小蜗"></a>
+    <p>我是小蜗</p>
+    <img width=400 src="/1-html/path_test/1.png" alt="小蜗">
+    <a name="蟹老板"></a>
+    <p>我是蟹老板</p>
+    <img width=400 src="/1-html/path_test/2.png" alt="蟹老板">
+    <a name="章鱼哥"></a>
+    <p>我是章鱼哥</p>
+    <img width=400 src="/1-html/path_test/3.png" alt="章鱼哥">
+    <!-- 也可以写id 也可以跳转，最好不要数字开头 -->
+    <p id="蟹黄堡">我是蟹黄堡</p>
+    <!-- id更加精准，推荐这个 -->
+    <img width=400 src="/1-html/path_test/4.png" alt="蟹黄堡">
+    <!-- 回到顶部 -->
+    <a href="#">回到顶部</a>
+    <a href="">刷新页面</a>
+    <a href="javascript:alert(666);">弹窗</a>
+
+</body>
+</html>

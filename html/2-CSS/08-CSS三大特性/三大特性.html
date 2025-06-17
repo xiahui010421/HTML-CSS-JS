@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>三大特性</title>
+    <style>
+        /* 层叠-----样式冲突  */
+ 
+        #atguigu{
+            color: green;
+        }
+        h2{
+            color: red;
+        }
+        /* 继承 ---*/
+        div{
+            color: red;
+            font-size: 40px;
+            background-color: gray;
+            /* 不能继承背景色 是透明的 */
+        }
+        /* 优先继承近的 */
+        p{
+            color: purple;
+        }
+        /* 继承的优先级最低 计算权重时，是分开算的*/
+
+    </style>
+</head>
+<body>
+    <!-- 层叠-----样式冲突 -->
+    <h2 id="atguigu">shangguigu</h2>
+    <!-- 继承 -->
+    <div>
+        lueluelue
+        <p>
+            lueluelue
+            <span>哈哈哈哈</span>
+        </p>
+        <span>hhh</span>
+    </div>
+
+</body>
+</html>

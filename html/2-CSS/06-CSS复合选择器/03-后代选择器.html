@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>后代选择器</title>
+    <style>
+        ul li{
+            color: yellow;
+        }
+        ul div li {
+            color: red;
+        }
+        ul li a {
+            color: aqua;
+        }
+        ol li{
+            color: green;
+        }
+        .subject #front-end {
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>smoke</li>
+        <li>drink</li>
+        <div>
+            <li>sports</li>
+        </div>
+        <li>
+            <a href="#">tangtou</a>
+        </li>
+    </ul>
+    <hr>
+    <ol>
+        <li>张三</li>
+        <li>李四</li>
+        <li>王五</li>
+        <ol class="subject">
+            <li id="front-end">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ol>
+    </ol>
+</body>
+</html>

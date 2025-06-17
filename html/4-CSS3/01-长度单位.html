@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>长度单位</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;  
+            background-color: red;
+        }
+        .box2{
+            width: 50vw; /* 50% of the viewport width */
+            height: 50vh; /* 50% of the viewport height */
+            background-color: blue;
+        }
+        .box3{
+            width: 50vmin; /* 50% of the smaller dimension of the viewport */
+            height: 50vmin; /* 50% of the smaller dimension of the viewport */
+            background-color: green;
+        }
+        .box4{
+            width: 50vmax; /* 50% of the larger dimension of the viewport */
+            height: 50vmax; /* 50% of the larger dimension of the viewport */
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">像素</div>
+    <div class="box2">像素</div>
+    <div class="box3">像素</div>
+    <div class="box4">像素</div>
+    
+</body>
+</html>

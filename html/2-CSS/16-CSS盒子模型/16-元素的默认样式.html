@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>元素的默认样式</title>
+    <style>
+        #d1{
+            font-size: 50px;
+            color: orange;
+        }
+        a {
+            color: aqua;
+            text-decoration: none;
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">
+        <!-- 继承的优先级最低 -->
+        <a href="https://www.baidu.com">去百度</a>
+        <a href="https://i0.hdslb.com/bfs/sycp/creative_img/202503/14cf1a18fe54a91d7e4ec26266bf9bfb.jpg">picture</a>
+        <span>你好啊</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>09-bg-clip</title>
+    <style>
+        .box1{
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            font-size: 100px;
+            font-weight: bold;
+            color: transparent;
+            background-color: rgb(131, 157, 167);
+            border: 1px solid #000;
+            background-image: url(../资料/图片/bg03.jpg);
+            /* background-size: 400px 400px; */
+            /* background-size: 100% 100%; */
+
+
+            /* background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center; */
+
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            /* background-clip: text; */
+
+        } 
+
+    </style>
+</head>
+<body>
+    <div class="box1">hello</div>
+</body>
+</html>

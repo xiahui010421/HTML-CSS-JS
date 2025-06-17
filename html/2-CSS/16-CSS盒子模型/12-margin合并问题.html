@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>合并问题</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+        }
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            margin-bottom: 50px;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(167, 219, 160);
+            margin-top: 80px;
+            /* 取最大值 */
+            /* float: left; */
+        }
+        .test {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+        .test1 {
+            background-color: purple;
+            margin-right: 50px;
+        }
+        .test2{
+            background-color: tomato;
+            margin-left: 50px;
+            /* 左右不吞并 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <hr>
+    <div class="test test1">a</div><div class="test test2">b</div>
+</body>
+</html>

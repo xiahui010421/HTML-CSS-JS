@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>表单文本域和下拉框</title>
+</head>
+<body>
+    <form action="https:search.jd.com/search">
+        <!-- label 焦点 -->
+        <label for="zhanghu">账户：</label><input  type="text" name="account" id="zhanghu" maxlength="10">
+        <br>
+        <label >
+            密码：<input type="password" name="pwd" id="mima" maxlength="6">
+        </label>
+        <br>
+        <!-- 单选框 -->
+
+        性别：
+        <label >
+            <input type="radio" name="gender" value="male">
+            男
+        </label>
+        <input type="radio" name="gender" id="nv" value="female" >
+        <label for="nv">女</label>
+        <br>
+        <!-- 多选框 -->
+        爱好：
+        <label >
+            <input type="checkbox" name="hobby" value="smoke">抽烟
+        </label>
+        <label>
+            <input type="checkbox" name="hobby" value="drunk">喝酒
+        </label>
+        <label >        
+            <input type="checkbox" name="hobby" value="perm">烫头
+        </label>
+        <br>
+        <label for="qita">其他：</label>
+        <textarea name="other" cols="15" id="qita" rows="3"></textarea>
+        <br>
+        籍贯：
+        <label >
+            <!-- 这样不能打开 只能选中那个框 -->
+            <select name="place" >
+                <option value="鄂">湖北</option>
+                <option value="湘">湖南</option>
+                <option value="冀">河北</option>
+                <option value="京" >北京</option>
+                <option value="沪">上海</option>
+            </select>
+        </label>
+        <br>
+        <input type="hidden" name="from" value="toutiao"><!-- 隐藏域  防止脚本大批提交表单-->
+        <input type="submit" value="确认" >
+        <input type="reset" value="重置">
+        <input type="button" value="检测账户是否被注册">
+    </form>
+</body>
+</html>

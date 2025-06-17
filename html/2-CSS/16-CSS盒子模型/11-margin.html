@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>塌陷问题margin</title>
+    <style> 
+        .outer{
+            width: 400px;
+            height: 200px;
+            background-color: gray;
+            /* border: 1px solid red;
+            padding: 1px; */
+            overflow: hidden;
+        }
+        .inner1 {
+            width: 100px;
+            height:100px;
+            background-color: rgb(228, 173, 70);
+            margin-top: 50px;
+            /* 被父亲抢走了，塌陷问题 */
+            /* margin-bottom: 50px; */
+        }
+        .inner2{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(170, 243, 170);
+            /* margin-top: 50px; */
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner1">innner1</div>
+        <div class="inner2">innner2</div>
+        <div>test</div>
+
+    </div>
+</body>
+</html>

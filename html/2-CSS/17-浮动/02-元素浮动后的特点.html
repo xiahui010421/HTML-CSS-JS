@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>元素浮动后的特点</title>
+    <style>
+        .outer{
+            width: 700px;
+            height: 400px;
+            background-color: gray;
+            text-align: center;
+        }
+        .box{
+            font-size: 20px;
+
+        }
+        .box1{
+            background-color: orange;
+        }
+        .box2{
+            background-color: rgb(219, 55, 19);
+            float: inline-start;
+            /* width: 200px;
+            height: 200px; */
+            /* margin-left: 20px;
+            margin-top: 20px; */
+
+            /* 浮动的元素不会当作文本处理 */
+
+        }
+        .box3{
+            background-color: rgb(48, 114, 185);
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+
+    </div>
+</body>
+</html>

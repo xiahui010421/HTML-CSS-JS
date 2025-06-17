@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>绝对定位</title>
+    <style>
+        .outer{
+            width: 500px;
+            background-color: skyblue;
+            border: 1px solid black;
+            padding: 20px;
+            position: relative;
+        }
+        .outer:hover .box2{
+            left: 220px;
+
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            
+        }
+        .box1{
+            background-color: #888;
+        }
+        .box2{
+            background-color: orange;
+            /* 有点像float但是字没有踢出去，文档流还在。相当于3在2的背后，原地起飞 */
+            position: absolute;
+            /* 参考点 --- 包含块*/
+            /* 第一个开启定位的祖先元素 */
+            top: 220px;
+            left: 20px;
+
+            /* margin要跟前面的对其top-top但是到一些浏览器不能用，原则上不要这么用 */
+            /* margin-left: 50px;
+            margin-top: 50px; */
+
+            /* 绝对定位和浮动不能同时用，绝对定位优先级高
+            float: right; */
+            
+            /* 过渡 */
+            transition: 1s all linear;
+
+
+        }
+        .box3{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+   <div class="outer">
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+   </div> 
+</body>
+</html>

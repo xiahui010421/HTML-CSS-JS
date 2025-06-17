@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>交集选择器</title>
+    <style>
+        .rich{
+            color: gold;
+        }
+        .beauty{
+            color: pink;
+        }
+        /* 实际上不太用#wc这种 */
+        p.beauty#wc{
+            color: gold;
+        }
+        /* 可以俩个作为交集 */
+        .beauty.rich{
+            color: deeppink;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="rich">土豪张三</h2>
+    <h2 class="beauty">美女小美</h2>
+    <!-- 如果没有交集，那就是上面样式后写的那个  后来者居上-->
+    <h2 class="rich beauty">明星王五</h2>
+    <hr>
+    <P class="beauty" id="wc">小狗旺财</P>
+    <p class="beauty">小猪佩奇</p>
+</body>
+</html>

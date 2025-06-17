@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS种常用的长度单位</title>
+    <style>
+        html{
+            font-size: 40px;
+        }
+        #d1{
+            /* 1 */
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+            background-color: skyblue;
+        }
+        #d2{
+            /* 2 ---em()----*/
+            width: 10em;
+            height: 10em;
+            /* font-size: 20px; */
+            /* 没有就找父元素  */
+            font-size: 1em;
+            background-color: rgb(61, 139, 170);
+        }
+        #d3{
+            /* 3 ----rem----*/
+            width: 5rem;
+            height: 5rem;
+            font-size: 20px;
+            background-color: rgb(2, 50, 69);
+        }
+        #d4{
+            /* 4 ----%-----*/
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+            background-color:rgb(160, 145, 145);
+        }
+        .inside{
+            width: 50%;
+            height: 25%;
+            font-size: 150%;
+            background-color: orange;
+        }
+        .test{
+            font-size: 80px;
+            text-indent: 2em;
+            background-color: yellowgreen;
+        }
+        </style>
+</head>
+<body style="font-size: 20px;">
+    <div id="d1">1</div>
+    <hr>
+    <div id="d2">2</div>
+    <hr>
+    <div id="d3">3</div>
+    <hr>
+    <div id="d4">
+        <div class="inside">4</div>
+    </div>
+    <hr>
+    <div class="test">haohaoxuexi ttxiangshang</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>全局</title>
+    <style>
+        .div{
+            width: 600px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 0 auto;
+            font-size: 20px;
+        }
+        .box1{
+            background-color: #b56767;
+        }
+        .box2{
+            background-color: #67b5b5;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1" contenteditable="true" draggable="true" spellcheck="true"  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, nostrum.\</div>
+    <div class="box2" draggable="true" ondragend="go(event)" hidden>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, nostrum.\
+    </div>
+
+    <script>
+        function go(e){
+            alert(e.x)
+        }
+    </script>
+</body>
+</html>
